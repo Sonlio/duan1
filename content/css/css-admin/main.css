@@ -15,7 +15,7 @@ body {
     width: 280px;
     height: 767px;
     padding: 10px 0px 10px 15px;
-    background-color: #2A3F54;
+    background-color: rgb(0, 0, 0);
 }
 
 .sidebar-title a img {
@@ -82,6 +82,10 @@ ul.nav-side-menu, .nav-side-menu-responsive{
     margin-top: 5px;
 }
 
+.show-list {
+    cursor: pointer;
+}
+
 .icon_close_responsive {
     position: absolute;
     top: 9px;
@@ -89,6 +93,7 @@ ul.nav-side-menu, .nav-side-menu-responsive{
     color: #fff;
     font-size: 30px;
     z-index: 1;
+    cursor: pointer;
 }
 
 ul.nav-side-menu > li, .nav-side-menu-responsive > li{
@@ -112,8 +117,8 @@ ul.nav-side-menu > li > a, .nav-side-menu-responsive > li > a{
 }
 
 .active {
-    border-right: 6px solid #1ABB9C;
-    background: linear-gradient(#41586d, #426280), #37526c;
+    border-right: 6px solid #e2ba48;
+    background: linear-gradient(#464646, #434343), #474747;
     box-shadow: rgb(0 0 0 / 25%) 0 1px 0, inset rgb(255 255 255 / 16%) 0 1px 0;
 }
 
@@ -137,14 +142,14 @@ ul.nav-child-menu > li, ul.nav-child-menu-responsive > li {
 }
 
 ul.nav-child-menu > li:hover, ul.nav-child-menu-responsive > li:hover{
-    background-color: rgba(255, 255, 255, 0.06);
-    border-right: 6px solid #1ABB9C;
+    background-color: #464646;
+    border-right: 6px solid #e2ba48;
     transition: 0.3s;
 }
 
 ul.nav-child-menu > li::before, ul.nav-child-menu-responsive > li::before  {
     content: "";
-    background: rgb(88, 112, 133);
+    background: #fff;
     bottom: auto;
     height: 8px;
     left: 23px;
@@ -158,7 +163,7 @@ ul.nav-child-menu > li::before, ul.nav-child-menu-responsive > li::before  {
 
 ul.nav-child-menu > li::after, ul.nav-child-menu-responsive > li::after {
     content: "";
-    border-left: 1px solid rgb(88, 112, 133);
+    border-left: 1px solid #fff;
     bottom: 0px;
     left: 27px;
     position: absolute;
@@ -190,7 +195,7 @@ ul.nav-child-menu > li > a, ul.nav-child-menu-responsive > li > a {
     left: 0px;
     right: 0px;
     z-index: 1;
-    background-color: #41586d;
+    background-color: rgb(0, 0, 0);
     transform: translateX(-100%);
     transition: 0.5s;
     opacity: 0;
@@ -203,7 +208,7 @@ ul.nav-child-menu > li > a, ul.nav-child-menu-responsive > li > a {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgb(0, 0, 0, 0.3);
+    background-color: rgb(0, 0, 0);
     z-index: 1;
     animation: fadeIn linear 0.4s;
     display: none;
@@ -212,11 +217,11 @@ ul.nav-child-menu > li > a, ul.nav-child-menu-responsive > li > a {
 /* LAYOUT RIGHT */
 .layout-right {
     width: 100%;
-    background-color: #F7F7F7;
+    background-color: rgb(247, 247, 247);
 }
 
 .nav-menu {
-    background: #EDEDED;
+    background: #ededed;
     border-bottom: 1px solid #D9DEE4;
     margin-bottom: 10px;
     padding: 5px 40px 5px 5px;
@@ -298,14 +303,14 @@ ul.nav-child-menu > li > a, ul.nav-child-menu-responsive > li > a {
     content: "";
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid #37526c;
+    border-bottom: 10px solid rgb(249, 16, 16);
     position: absolute;
     left: 10px;
     transform: translateY(-100%);
 }
 
 .nav-menu-log > li:first-child:hover::before {
-    border-bottom-color: #406180;
+    border-bottom-color: rgb(212, 4, 4);
 }
 
 .nav-menu-log > li > a {
@@ -313,12 +318,12 @@ ul.nav-child-menu > li > a, ul.nav-child-menu-responsive > li > a {
     padding: 12px 20px;
     display: block;
     text-decoration: none;
-    background-color: #37526c;
+    background-color: rgb(249, 16, 16);
     transition: 0.3s;
 }
 
 .nav-menu-log > li > a:hover {
-    background-color: #406180;
+    background-color: rgb(212, 4, 4);
     color: #fff;
 }
 
@@ -332,7 +337,7 @@ ul.nav-child-menu > li > a, ul.nav-child-menu-responsive > li > a {
 .statistics-item {
     width: 20%;
     height: 70px;
-    background-color: #2A3F54;
+    background-color: rgb(0, 0, 0);
     border-radius: 7px;
     display: flex;
     justify-content: space-between;

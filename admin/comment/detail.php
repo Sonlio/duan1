@@ -25,7 +25,7 @@
                                 <td>Sản phẩm chất lượng</td>
                                 <td class="hide">19/04/2002</td>
                                 <td class="hide">Lê Văn Sơn</td>
-                                <td><a title="Sửa" href=""><i class="fa-solid fa-pen-to-square"></i></a> <a title="Xoá" href=""><i class="fa-solid fa-trash"></i></a></td>
+                                <td><a title="Xoá" href=""><i class="fa-solid fa-trash"></i></a></td>
                             </tr>
                             <input type="checkbox" hidden id="checkbox_see_more" class="checkbox_see_more">
                             <table class="table-child">

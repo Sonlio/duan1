@@ -67,7 +67,7 @@
                 <div class="nav-menu">
                     <!-- HEADER -->
                     <div class="nav-menu-info">
-                        <label for="checkbox_responsive"><i class="fa-solid fa-list show"></i></label>
+                        <label for="checkbox_responsive"><i class="fa-solid fa-list show-list show"></i></label>
                         <input type="checkbox" hidden class="checkbox_responsive" id="checkbox_responsive">
                         <label for="checkbox_responsive" class="responsive_overlay"></label>
                         <!-- SIDEBAR RESPONSIVE -->

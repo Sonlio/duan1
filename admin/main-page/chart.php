@@ -8,10 +8,10 @@
         function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Loại', 'Số Lượng', { role: 'style' }], 
-            ['Rolex', 2, 'fill-color: #2A3F54'], 
-            ['Omega', 4, 'fill-color: #2A3F54'], 
-            ['Casio', 5, 'fill-color: #2A3F54'], 
-            ['Casio', 5, 'fill-color: #2A3F54'], 
+            ['Rolex', 2, 'fill-color: rgb(0, 0, 0)'], 
+            ['Omega', 4, 'fill-color: rgb(0, 0, 0)'], 
+            ['Casio', 5, 'fill-color: rgb(0, 0, 0)'], 
+            ['Casio', 5, 'fill-color: rgb(0, 0, 0)'], 
         ]);
 
         var options = {
