@@ -17,10 +17,29 @@
             <div class="grid">
                 <!-- HEADER MENU -->
                 <div class="header-menu">
+                    <label for=""><i class="fa-solid fa-bars icon-show-menu l-0"></i></label>
+                    <div class="menu-res l-0">
+                        <div class="wrapper-search-res">
+                            <form action="" method="post" class="search-res">
+                                <input class=ip-search-res type="text" value="" placeholder="Tìm kiếm...">
+                                <button class="submit-search-res" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                        <ul class="main-menu-res">
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Đồng hồ nam</a></li>
+                            <li><a href="#">Đồng hồ nữ</a></li>
+                            <li><a href="#">Đồng hồ đôi</a></li>
+                            <li><a href="#">Phụ kiện</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Đăng nhập</a></li>
+                        </ul>
+                    </div>
                     <div class="logo">
                         <a href="#"><img src="../content/images/img-site/logo.png" alt="Logo"></a>
                     </div>
-                    <div class="header-nav">
+                    <div class="header-nav m-0 c-0">
                         <!-- MAIN MENU -->
                         <ul class="main-menu">
                             <li><a href="#" class="active">Trang chủ</a></li>
@@ -42,16 +61,18 @@
                     <div class="tools">
                         <ul class="tools-item">
                             <li>
-                                <a class="icon-search">
+                                <a class="icon-search m-0 c-0">
                                     <i class="fa-solid fa-magnifying-glass"></i>
-                                    <div class="search">
-                                        <input class="ip-search" type="text">
-                                        <button class="submit-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    <div class="wrapper-search">
+                                        <form action="" method="post" class="search">
+                                            <input class="ip-search" type="text">
+                                            <button class="submit-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        </form>
                                     </div>
                                 </a>
                             </li>
                             <li>
-                                <a class="icon-user"><i class="fa-solid fa-user"></i></a>
+                                <a class="icon-user m-0 c-0"><i class="fa-solid fa-user"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="icon-cart"><i class="fa-sharp fa-solid fa-basket-shopping"></i></a>
@@ -96,7 +117,7 @@
                     <h2 class="title-category">Đồng hồ nam</h2>
                 </div>
                 <div class="row no-gutters container-content">
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -118,7 +139,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -140,7 +161,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -162,7 +183,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -184,7 +205,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -206,7 +227,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -228,7 +249,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -250,7 +271,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -280,7 +301,7 @@
                     <h2 class="title-category">Đồng hồ nữ</h2>
                 </div>
                 <div class="row no-gutters content">
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -302,7 +323,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -324,7 +345,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -346,7 +367,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -368,7 +389,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -390,7 +411,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -412,7 +433,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -434,7 +455,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
@@ -464,14 +485,14 @@
                     <h2 class="title-category">Đồng hồ đôi</h2>
                 </div>
                 <div class="row no-gutters content">
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn1.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/dhd1.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Đồng hồ đôi</p>
@@ -486,14 +507,14 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn2.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/dhd2.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Đồng hồ đôi</p>
@@ -508,14 +529,14 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn3.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/dhd3.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Đồng hồ đôi</p>
@@ -530,14 +551,14 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn4.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/dhd4.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Đồng hồ đôi</p>
@@ -560,14 +581,14 @@
                     <h2 class="title-category">Phụ kiện</h2>
                 </div>
                 <div class="row no-gutters content">
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn1.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/pk1.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Phụ kiện</p>
@@ -582,14 +603,14 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn2.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/pk2.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Phụ kiện</p>
@@ -604,14 +625,14 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn3.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/pk3.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Phụ kiện</p>
@@ -626,14 +647,14 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-3 c-6">
                         <a href="#" class="product-item">
                             <div class="content-product-item">
                                 <div class="product-item-discount">
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-item-img">
-                                    <img src="../content/images/img-admin/img-products/dhn4.png" alt="">
+                                    <img src="../content/images/img-admin/img-products/pk4.png" alt="">
                                 </div>
                                 <div class="product-item-name-category">
                                     <p>Phụ kiện</p>

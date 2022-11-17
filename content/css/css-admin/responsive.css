@@ -49,7 +49,7 @@
 }
 
 /* TABLET */
-@media (min-width: 740px) and (max-width: 1230px) {
+@media (min-width: 740px) and (max-width: 1229px) {
     .title-panel h2 {
         font-size: 22px;
     }

@@ -31,10 +31,6 @@
     padding-right: 0;
 }
 
-.c-0 {
-    display: none;
-}
-
 .c-1 {
     flex: 0 0 8.33333%;
     max-width: 8.33333%;
@@ -139,8 +135,14 @@
     margin-left: 91.66667%;
 }
 
+@media (max-width: 739px) {
+    .c-0 {
+        display: none;
+    }
+}
+
 /* >= Tablet */
-@media (min-width: 740px) {
+@media (min-width: 740px) and (max-width: 1023px) {
     .row {
         margin-left: -8px;
         margin-right: -8px;
@@ -429,13 +431,13 @@
 
 /* Tablet - PC low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
-    .wide {
+    /* .wide {
         width: 644px;
-    }
+    } */
 }
 
 /* > PC low resolution */
-@media (min-width: 1024px) and (max-width: 1239px) {
+@media (min-width: 1023px) and (max-width: 1426px) {
     .wide {
         width: 984px;
     }
@@ -458,10 +460,6 @@
     .wide .row.sm-gutter .col {
         padding-left: 5px;
         padding-right: 5px;
-    }
-
-    .wide .l-0 {
-        display: none;
     }
 
     .wide .l-1,

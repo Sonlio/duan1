@@ -21,7 +21,7 @@ a {
 /* HEADER MENU */
 .header-menu {
     position: absolute;
-    z-index: 10;
+    z-index: 20;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,6 +36,12 @@ a {
 
 .logo > a > img {
     width: 55%;
+}
+
+.icon-show-menu{
+    color: #fff;
+    font-size: 23px;
+    margin-left: 20px;
 }
 
 .main-menu {
@@ -157,6 +163,7 @@ a {
 
 .tools-item{
     display: flex;
+    padding: 0;
 }
 
 .tools-item > li{
@@ -231,6 +238,50 @@ a {
     font-size: 21px;
     border: none;
     cursor: pointer;
+}
+
+/* MENU RESPONSIVE */
+.menu-res {
+    position: fixed;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 50%);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    padding: 20px 0px 5px 20px 10px;
+}
+
+.wrapper-search-res {
+    padding: 40px 10px 10px 20px;
+}
+
+.search-res {
+    position: relative;
+}
+
+.ip-search-res {
+    background-color: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.09);
+    border-radius: 80px;
+    height: 30px;
+    width: 200px;
+    padding: 0px 10px;
+    outline: none;
+}
+
+.submit-search-res {
+    position: absolute;
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main-menu-res {
+    padding-left: 20px;
 }
 
 /* HEADER BANNER */
@@ -408,14 +459,14 @@ a {
 .product-item-price del {
     opacity: .6;
     color: #111;
-    margin-right: 6px;
+    margin-right: 5px;
 }
 
 .product-item-price p {
     margin: 0px;
     color: #111;
     font-weight: bold;
-    margin-left: 6px;
+    margin-left: 5px;
 }
 
 /* FOOTER */

@@ -1,0 +1,126 @@
+/*MOBILE & TABLET */
+@media (max-width: 1023px) {
+    .tools-item > li > a::before {
+        display: none;
+    }
+    .logo{
+        margin: 0;
+        text-align: center;
+    }
+    .logo > a > img {
+        width: 40%;
+    }
+    .tools {
+        margin: 0;
+        text-align: center;
+    }
+    .tools-item {
+        display: block;
+    }
+    .product-item-name p {
+        font-size: 16px;
+    }
+    .product-item-discount {
+        height: 40px;
+        width: 40px;
+    }
+    .product-item-discount span {
+        font-size: 16px;
+        line-height: 40px;
+    }
+    .product-item-price del, .product-item-price p {
+        font-size: 13px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 739px) {
+    .header-menu {
+        height: 60px;
+    }
+    .slider-prev {
+        padding: 4px 7px;
+        font-size: 16px;
+        left: 6px;
+    }
+    .slider-next {
+        padding: 4px 7px;
+        font-size: 16px;
+        right: 6px;
+    }
+    .slider-dots {
+        bottom: 8px;
+    }
+    .slider-dot-item {
+        height: 2px;
+        width: 26px;
+    }
+    .middle::before {
+        position: absolute;
+        content: " ";
+        width: 100%;
+        top: 0;
+        border-top: 1px dashed #ddd;
+        border-left: none;
+        opacity: .5;
+    }
+    .middle::after {
+        position: absolute;
+        content: " ";
+        width: 100%;
+        bottom: 0;
+        border-bottom: 1px dashed #ddd;
+        opacity: .5;
+        border-right: none;
+    }
+    .col-inner {
+        text-align: center;
+    }
+    .footer-heading {
+        font-size: 17px;
+    }
+    .footer-list > li > a {
+        font-size: 15px;
+    }
+    .footer-logo > img {
+        width: 35%;
+    }
+    .intro {
+        font-size: 16px;
+    }
+    .footer-contact p, .copyright-footer p {
+        font-size: 15px;
+    }
+}
+
+/* TABLET */
+@media (min-width: 1178px) and (max-width: 1426px) {
+    .main-menu > li > a, .tools-item > li > a{
+        font-size: 15px;
+    }
+    .logo {
+        margin-left: 5%;
+    }
+    .tools {
+        margin-right: 5%;
+    }
+}
+
+/* TABLET */
+@media (min-width: 1023px) and (max-width: 1177px) {
+    .l-0 {
+        display: none;
+    }
+    .main-menu > li > a, .tools-item > li > a{
+        font-size: 13px;
+    }
+    .logo{
+        margin-left: 1%;
+    }
+    .tools {
+        margin: 0;
+    }
+    .logo > a > img{
+        width: 40%;
+    }
+}

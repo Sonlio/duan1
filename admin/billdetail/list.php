@@ -35,7 +35,7 @@
                                 <td class="hide">2</td>
                                 <td>18.000.000 đ</td>
                                 <td class="hide">1</td>
-                                <td><a title="Sửa" href=""><i class="fa-solid fa-pen-to-square"></i></a> <a title="Xoá" href=""><i class="fa-solid fa-trash"></i></a></td>
+                                <td><a title="Xoá" href=""><i class="fa-solid fa-trash"></i></a></td>
                             </tr>
                             <input type="checkbox" hidden id="checkbox_see_more" class="checkbox_see_more">
                             <table class="table-child">
