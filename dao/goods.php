@@ -1,0 +1,93 @@
+<?php
+    require_once '../../pdo.php';
+
+    // THÊM SẢN PHẨM
+    function san_pham_insert($ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai){
+        $sql = "INSERT INTO san_pham(ten_sp, don_gia, giam_gia, hinh, mo_ta, ma_hang, ma_loai) VALUES (?,?,?,?,?,?,?)";
+        execute($sql, $ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai);   
+    }
+
+    // CẬP NHẬT SẢN PHẨM
+    function san_pham_update($ma_sp, $ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai){
+        $sql = "UPDATE san_pham SET ten_sp=?, don_gia=?, giam_gia=?, hinh=?, mo_ta=?, ma_hang=?, ma_loai=? WHERE ma_sp=?";
+        execute($sql, $ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai, $ma_sp);
+    }
+    
+    // XOÁ SẢN PHẨM
+    function san_pham_delete($ma_sp){
+        $sql = "DELETE FROM san_pham WHERE ma_sp=?";
+        if(is_array($ma_sp)){
+            foreach ($ma_sp as $ma) {
+                execute($sql, $ma);
+            }
+        }
+        else{
+            execute($sql, $ma_sp);
+        }
+    }
+
+    // XOÁ TẤT CẢ SẢN PHẨM
+    function san_pham_delete_all(){
+        $sql = "DELETE FROM san_pham";
+        return execute($sql);
+       
+    }
+
+    // LẤY TẤT CẢ SẢN PHẨM
+    function san_pham_select_all(){
+        $sql = "SELECT * FROM san_pham";
+        return query_all($sql);
+    }
+    
+    // LẤY SẢN PHẨM THEO ID
+    function san_pham_select_by_id($ma_sp){
+        $sql = "SELECT * FROM san_pham WHERE ma_sp=?";
+        return query_one($sql, $ma_sp);
+    }
+    
+    // KIỂM TRA SỰ TỒN TẠI CỦA SẢN PHẨM
+    function san_pham_exist($ma_sp){
+        $sql = "SELECT count(*) FROM san_pham WHERE ma_sp=?";
+        return query_value($sql, $ma_sp) > 0;
+    }
+    
+    // LẤY SẢN PHẨM THEO LOẠI
+    function san_pham_select_by_loai($ma_loai){
+        $sql = "SELECT * FROM san_pham WHERE ma_loai=?";
+        return query_all($sql, $ma_loai);
+    }
+        
+    // LẤY SẢN PHẨM THEO TÊN
+    function san_pham_select_keyword($keyword){
+        $sql = "SELECT * FROM san_pham JOIN loai ON loai.ma_loai=san_pham.ma_loai WHERE ten_sp LIKE ? OR ten_loai LIKE ?";
+        return query_all($sql, '%'.$keyword.'%', '%'.$keyword.'%');
+    }
+        
+    // PHÂN TRANG
+    function san_pham_select_page(){
+        if(!isset($_SESSION['page_no'])){
+            $_SESSION['page_no'] = 0;
+        }
+        if(!isset($_SESSION['page_count'])){
+            $row_count = query_value("SELECT count(*) FROM san_pham");
+            $_SESSION['page_count'] = ceil($row_count/ 20);
+        }
+        if(exist_param("page_no")){
+            $_SESSION['page_no'] = $_REQUEST['page_no'];
+        }
+        if($_SESSION['page_no'] < 0){
+            $_SESSION['page_no'] = $_SESSION['page_count'] - 1;
+        }
+        if($_SESSION['page_no'] >= $_SESSION['page_count']){
+            $_SESSION['page_no'] = 0;
+        }
+        $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC LIMIT ".$_SESSION['page_no'].", 20";
+        return query_all($sql);
+    }
+
+    // TỔNG SỐ LƯỢNG
+    function amount_goods(){
+        $sql = "SELECT count(*) so_luong FROM san_pham";
+        return query_all($sql);
+    }
+?>

@@ -45,7 +45,6 @@
                             </ul>
                         </li>
                         <li><a href="<?= $ADMIN_URL ?>/customer" class="link"><i class="fa-solid fa-user"></i>Khách hàng</a></li>
-                        <li><a href="<?= $ADMIN_URL ?>/customer" class="link"><i class="fa-solid fa-screwdriver-wrench"></i>Nhân viên</a></li>
                         <li><a href="<?= $ADMIN_URL ?>/comment" class="link"><i class="fa-solid fa-comment"></i>Bình luận</a></li>
                         <li>
                             <a class="link"><label for="dropdown-bill"><i class="fa-sharp fa-solid fa-briefcase"></i>Đơn hàng<i class="fa-solid fa-caret-down"></i></label></a>
@@ -125,5 +124,6 @@
     </div>
 
     <script src="<?= $CONTENT_URL ?>/js/js-admin/main.js"></script>
+    
 </body>
 </html>

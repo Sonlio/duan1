@@ -1,8 +1,10 @@
 <?php
-require_once "../../global.php";
+    require_once "../../global.php";
+    require_once "../../dao/statistic.php";
 
+    // check_login();
     $VIEW = "main-page/chart.php";
 
-require "../layout.php";
- 
+    $items = thong_ke_khach_hang();
+    require "../layout.php";
 ?>

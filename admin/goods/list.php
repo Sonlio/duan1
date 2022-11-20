@@ -5,9 +5,10 @@
         <div class="col">
             <div class="panel">
                 <div class="title-panel">
-                    <h2>Danh sách đồng hồ (5)</h2>
+                    <h2>Danh sách sản phẩm <?php foreach($amounts as $amount) extract($amount);?>(<?= $so_luong ?>)</h2>
                     <ul class="title-panel-right">
-                        <a href="" class="btn-title-panel-right">Thêm mới</a>
+                        <a href="index.php" class="btn-title-panel-right">Thêm mới</a>
+                        <a href="index.php?btn_delete_all" id="delete_all" class="btn-delete-all">Xóa tất cả</a>
                     </ul>
                 </div>
                 <div class="content-panel">
@@ -25,36 +26,42 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i><span>1</span></label></td>
-                                <td class="td-img"><img src="../../content/images/img-admin/dhn1.png" alt=""></td>
-                                <td class="hide">1</td>
-                                <td>Rolex 1</td>
-                                <td class="hide">9.000.000 đ</td>
-                                <td class="hide">10%</td>
-                                <td><a title="Sửa" href=""><i class="fa-solid fa-pen-to-square"></i></a> <a title="Xoá" href=""><i class="fa-solid fa-trash"></i></a></td>
-                            </tr>
-                            <input type="checkbox" hidden id="checkbox_see_more" class="checkbox_see_more">
-                            <table class="table-child">
-                                <tr class="tr-child">
-                                    <td class="td-child">
-                                        <ul>
-                                            <li>
-                                                <span class="span-title">Mã đồng hồ:</span>
-                                                <span class="span-data">1</span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Đơn giá:</span>
-                                                <span class="span-data">9.000.000 đ</span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Giảm giá:</span>
-                                                <span class="span-data">10%</span>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr> 
-                            </table>    
+                            <?php
+                                $i = 1;
+                                foreach($items as $item) {
+                                    extract($item); ?>
+                                    <tr>
+                                        <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i> <i class="fa-solid fa-minus no-see-more"></i><span><?= $i ?></span></label></td>
+                                        <td class="td-img"><img src="<?= $CONTENT_URL ?>/images/img-admin/img-products/<?= $hinh ?>" alt=""></td>
+                                        <td class="hide"><?= $ma_sp ?></td>
+                                        <td><?= $ten_sp ?></td>
+                                        <td class="hide"><?= $don_gia ?> đ</td>
+                                        <td class="hide"><?= $giam_gia ?>%</td>
+                                        <td>
+                                            <a title="Sửa" href="index.php?btn_edit&ma_sp=<?= $ma_sp ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a title="Xoá" id="delete" href="index.php?btn_delete&ma_sp=<?= $ma_sp ?>"><i class="fa-solid fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr-child">
+                                        <td class="td-child" colspan="4">
+                                            <ul>
+                                                <li>
+                                                    <span class="span-title">Mã đồng hồ:</span>
+                                                    <span class="span-data"><?= $ma_sp ?></span>
+                                                </li>
+                                                <li>
+                                                    <span class="span-title">Đơn giá:</span>
+                                                    <span class="span-data"><?= $don_gia ?> đ</span>
+                                                </li>
+                                                <li>
+                                                    <span class="span-title">Giảm giá:</span>
+                                                    <span class="span-data"><?= $giam_gia ?>%</span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                            <?php $i++; }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -68,3 +75,44 @@
     </div>
 </body>
 </html>
+
+<script>
+    // CHECK DELETE
+    const checkDelete = document.querySelectorAll("#delete");
+    checkDelete.forEach(function(checkDelete){
+        checkDelete.addEventListener('click', function(event){
+            const mess = confirm("Bạn có chắc chắn muốn xoá khách hàng này không?");
+            if(mess == false){
+            event.preventDefault();
+            }
+        })
+    })
+
+    // CHECK DELETE ALL
+    const checkDeleteAll = document.querySelector("#delete_all");
+        checkDeleteAll.addEventListener('click', function(event){
+        const mess = confirm("Bạn có chắc chắn muốn xoá tất cả không?");
+        if(mess == false){
+        event.preventDefault();
+        }
+    })
+
+    // XEM THÊM KHI TRÊN MOBILE VÀ TABLET
+    const trChilds = document.querySelectorAll('.tr-child');
+    const iconSeeMores = document.querySelectorAll('.see-more');
+    const iconNoSeeMores = document.querySelectorAll('.no-see-more');
+    for(let i = 0; i < iconSeeMores.length; i++) {
+        iconSeeMores[i].addEventListener('click', function() {
+            iconSeeMores[i].classList.remove('show');
+            iconSeeMores[i].classList.add('hide');
+            trChilds[i].classList.add('tr-child-show');
+            iconNoSeeMores[i].classList.add('show');
+            iconNoSeeMores[i].addEventListener('click', function(){
+                trChilds[i].classList.remove('tr-child-show');
+                iconNoSeeMores[i].classList.remove('show');
+                iconNoSeeMores[i].classList.add('hide');
+                iconSeeMores[i].classList.add('show');
+            })
+        });
+    }
+</script>

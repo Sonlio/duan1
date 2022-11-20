@@ -17,8 +17,11 @@
             <div class="grid">
                 <!-- HEADER MENU -->
                 <div class="header-menu">
-                    <label for=""><i class="fa-solid fa-bars icon-show-menu l-0"></i></label>
+                    <label for="checkbox-res"><i class="fa-solid fa-bars icon-show-menu l-0"></i></label>
+                    <input hidden type="checkbox" class="checkbox-res" id="checkbox-res">
+                    <label for="checkbox-res" class="overlay m-0 c-0 l-0"></label>
                     <div class="menu-res l-0">
+                        <label for="checkbox-res" class="icon-close-res"><i class="fa-solid fa-xmark"></i></label>
                         <div class="wrapper-search-res">
                             <form action="" method="post" class="search-res">
                                 <input class=ip-search-res type="text" value="" placeholder="Tìm kiếm...">
@@ -33,7 +36,7 @@
                             <li><a href="#">Đồng hồ đôi</a></li>
                             <li><a href="#">Phụ kiện</a></li>
                             <li><a href="#">Liên hệ</a></li>
-                            <li><a href="#">Đăng nhập</a></li>
+                            <li><a href="#" class="icon-show-login">Đăng nhập</a></li>
                         </ul>
                     </div>
                     <div class="logo">
@@ -42,19 +45,19 @@
                     <div class="header-nav m-0 c-0">
                         <!-- MAIN MENU -->
                         <ul class="main-menu">
-                            <li><a href="#" class="active">Trang chủ</a></li>
-                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#" class="link">Trang chủ</a></li>
+                            <li><a href="#" class="link">Giới thiệu</a></li>
                             <li>
-                                <a href="#">Sản phẩm</a>
+                                <a href="#" class="link">Sản phẩm</a>
                                 <!-- CHILD MENU -->
                                 <ul class="child-menu">
-                                    <li><a href="#">Đồng hồ nam</a></li>
-                                    <li><a href="#">Đồng hồ nữ</a></li>
-                                    <li><a href="#">Đồng hồ đôi</a></li>
+                                    <li><a href="">Đồng hồ nam</a></li>
+                                    <li><a href="">Đồng hồ nữ</a></li>
+                                    <li><a href="">Đồng hồ đôi</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Phụ kiện</a></li>
-                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#" class="link">Phụ kiện</a></li>
+                            <li><a href="#" class="link">Liên hệ</a></li>
                         </ul>
                     </div>
                     <!-- TOOLS -->
@@ -72,7 +75,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="icon-user m-0 c-0"><i class="fa-solid fa-user"></i></a>
+                                <a class="icon-user m-0 c-0 icon-show-login"><i class="fa-solid fa-user"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="icon-cart"><i class="fa-sharp fa-solid fa-basket-shopping"></i></a>
@@ -80,6 +83,28 @@
                         </ul>
                     </div>
                 </div>
+                <!-- LOGIN -->
+                <div class="wrapper-login">
+                    <form action="" method="post" class="main-login">                   
+                        <i class="fa-solid fa-xmark icon-close-form-login"></i>
+                        <h2 class="title-login">Đăng nhập</h2>
+                        <div class="form-group">
+                            <label class="label-control" for="username">Tên đăng nhập *</label>
+                            <input class="form-control" type="text" placeholder="Tên đăng nhập" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label class="label-control" for="password">Mật khẩu *</label>
+                            <input class="form-control"  type="password" placeholder="Mật khẩu" id="password">
+                        </div>
+                        <div class="form-btn">
+                            <input class="btn-submit" type="submit" value="Đăng nhập">
+                            <input class="ip-remember" type="checkbox" id="remember"> <label class="label-remember" for="remember">Ghi nhớ mật khẩu</label>
+                        </div>
+                        <p class="lost-pass"><a href="#">Quên mật khẩu?</a></p>
+                        <p class="register"><a href="#">Đăng ký</a></p>
+                    </form>
+                </div>
+
                 <!-- HEADER BANNER -->
                 <div class="header-banner">
                     <div class="slider">

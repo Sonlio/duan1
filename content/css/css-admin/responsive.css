@@ -6,6 +6,9 @@
     .show {
         display: block;
     }
+    .tr-child-show {
+        display: table-row;
+    }
     .col {
         padding: 0px;
     }
@@ -31,9 +34,6 @@
     }
     .statistics-item-icon {
         font-size: 35px;
-    }
-    .checkbox_see_more:checked ~.table-child{
-        display: block;
     }
     .fa-pen-to-square, .fa-trash {
         margin-bottom: 4px;
@@ -92,7 +92,7 @@
     .title-panel h2 {
         font-size: 17px;
     }
-    .btn-title-panel-right {
+    .btn-title-panel-right, .btn-delete-all{
         font-size: 12px;
         padding: 5px 5px;
     }
