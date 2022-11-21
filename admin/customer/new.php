@@ -55,8 +55,8 @@
                         <div class="form-group">
                             <label class="control-label" for="">Vai trò <strong>*</strong></label>
                             <div class="border-radio">
-                                <input type="radio" class="form-control-radio" name="vai_tro" id="admin" value="1" checked> <label for="admin">Nhân viên</label>
                                 <input type="radio" class="form-control-radio" name="vai_tro" id="customer" value="0"> <label for="customer">Khách hàng</label>
+                                <input type="radio" class="form-control-radio" name="vai_tro" id="admin" value="1" checked> <label for="admin">Nhân viên</label>
                             </div>
                         </div>
                         <div class="form-group-btn">

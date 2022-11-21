@@ -25,18 +25,23 @@
                         <tbody>
                             <?php 
                                 $i = 1;
-                                foreach ($items as $item) {                                 
-                                    extract($item); ?>
-                                    <tr>
-                                        <td><?= $i ?></td>
-                                        <td><?= $ten_loai ?></td>
-                                        <td><?= $ma_loai ?></td>
-                                        <td>
-                                            <a title="Sửa" href="index.php?btn_edit&ma_loai=<?= $ma_loai ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <a title="Xoá" id="delete" href="index.php?btn_delete&ma_loai=<?= $ma_loai ?>"><i class="fa-solid fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                <?php $i++; } ?>       
+                                if(count($types) > 0) {
+                                    foreach ($types as $type) {                                 
+                                        extract($type); ?>
+                                        <tr>
+                                            <td><?= $i ?></td>
+                                            <td><?= $ten_loai ?></td>
+                                            <td><?= $ma_loai ?></td>
+                                            <td>
+                                                <a title="Sửa" href="index.php?btn_edit&ma_loai=<?= $ma_loai ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a title="Xoá" id="delete" href="index.php?btn_delete&ma_loai=<?= $ma_loai ?>"><i class="fa-solid fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php $i++; } } else{ ?>
+                                        <tr>
+                                            <td colspan="4">Danh sách trống</td>
+                                        </tr>
+                                <?php } ?>
                         </tbody>
                     </table>
                 </div>

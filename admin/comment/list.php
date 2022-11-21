@@ -21,31 +21,40 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i><span>1</span></label></td>          
-                                <td>Rolex 1</td>
-                                <td>3</td>
-                                <td class="hide">19/04/2022</td>
-                                <td class="hide">19/04/2002</td>
-                                <td><a title="Chi tiết" href=""><i class="fa-solid fa-circle-info"></i></a></td>
-                            </tr>
-                            <input type="checkbox" hidden id="checkbox_see_more" class="checkbox_see_more">
-                            <table class="table-child">
-                                <tr class="tr-child">
-                                    <td class="td-child">
-                                        <ul>
-                                            <li>
-                                                <span class="span-title">Ngày bình luận mới nhất:</span>
-                                                <span class="span-data">19/04/2022</span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Ngày bình luận cũ nhất:</span>
-                                                <span class="span-data">19/04/2002</span>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr> 
-                            </table>    
+                            <?php
+                                $i = 1;
+                                if(count($comments) > 0) {
+                                foreach($comments as $comment) {
+                                    extract($comment);                                 ?>
+                                        <tr>
+                                            <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i> <i class="fa-solid fa-minus no-see-more"></i><span><?= $i ?></span></label></td>          
+                                            <td><?= ucfirst($ten_sp); ?></td>
+                                            <td><?= $so_luong; ?></td>
+                                            <td class="hide"><?= $moi_nhat ?></td>
+                                            <td class="hide"><?= $cu_nhat ?></td>
+                                            <td><a title="Chi tiết" href="../comment/index.php?ma_sp=<?= $ma_sp; ?>"><i class="fa-solid fa-circle-info"></i></a></td>
+                                        </tr>
+                                        <tr class="tr-child">
+                                            <td class="td-child" colspan="4">
+                                                <ul>
+                                                    <li>
+                                                        <span class="span-title">Ngày bình luận mới nhất:</span>
+                                                        <span class="span-data"><?= $moi_nhat ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="span-title">Ngày bình luận cũ nhất:</span>
+                                                        <span class="span-data"><?= $cu_nhat ?></span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                <?php $i++; }
+                                }else { ?>
+                                    <tr>
+                                        <td colspan="6">Danh sách trống</td>
+                                    </tr>
+                               <?php }
+                            ?> 
                         </tbody>
                     </table>                  
                 </div>
@@ -59,3 +68,24 @@
     </div>
 </body>
 </html>
+
+<script>
+    // XEM THÊM KHI TRÊN MOBILE VÀ TABLET
+    const trChilds = document.querySelectorAll('.tr-child');
+    const iconSeeMores = document.querySelectorAll('.see-more');
+    const iconNoSeeMores = document.querySelectorAll('.no-see-more');
+    for(let i = 0; i < iconSeeMores.length; i++) {
+        iconSeeMores[i].addEventListener('click', function() {
+            iconSeeMores[i].classList.remove('show');
+            iconSeeMores[i].classList.add('hide');
+            trChilds[i].classList.add('tr-child-show');
+            iconNoSeeMores[i].classList.add('show');
+            iconNoSeeMores[i].addEventListener('click', function(){
+                trChilds[i].classList.remove('tr-child-show');
+                iconNoSeeMores[i].classList.remove('show');
+                iconNoSeeMores[i].classList.add('hide');
+                iconSeeMores[i].classList.add('show');
+            })
+        });
+    }
+</script>

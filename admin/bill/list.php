@@ -5,12 +5,12 @@
         <div class="col">
             <div class="panel">
                 <div class="title-panel">
-                    <h2>Danh sách đơn hàng (3)</h2>
+                    <h2>Danh sách đơn hàng <?php foreach($amounts as $amount) extract($amount);?>(<?= $so_luong ?>)</h2>
                 </div>
                 <div class="content-panel">
                     <br>
                     <table class="table">
-                        <thead>
+                        <thead>         
                             <tr>
                                 <th class="sort">STT</th>
                                 <th class="hide">Mã hoá đơn</th>
@@ -24,46 +24,59 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i><span>1</span></label></td>
-                                <td class="hide">1</td>
-                                <td class="hide">son</td>
-                                <td>Lê Văn Sơn</td>
-                                <td class="hide">Quảng Bình</td>
-                                <td class="hide">0901749631</td>
-                                <td class="hide">son@gmail.com</td>
-                                <td>20.000.000 đ</td>
-                                <td><a title="Xoá" href=""><i class="fa-solid fa-trash"></i></a></td>
-                            </tr>
-                            <input type="checkbox" hidden id="checkbox_see_more" class="checkbox_see_more">
-                            <table class="table-child">
-                                <tr class="tr-child">
-                                    <td class="td-child">
-                                        <ul>
-                                            <li>
-                                                <span class="span-title">Mã hoá đơn:</span>
-                                                <span class="span-data">1</span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Mã khách hàng:</span>
-                                                <span class="span-data">son</span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Địa chỉ:</span>
-                                                <span class="span-data">Quảng Bình</span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Số điện thoại:</span>
-                                                <span class="span-data">0901749631</span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Email:</span>
-                                                <span class="span-data">son@gmail.com</span>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr> 
-                            </table>    
+                            <?php
+                                $i = 1;
+                                if(count($bills) > 0) {
+                                    foreach($bills as $bill) {
+                                        extract($bill); ?>
+                                        <tr>
+                                            <td>
+                                                <label for="checkbox_see_more" class="td-see-more">
+                                                    <i class="fa-solid fa-plus see-more show"></i> 
+                                                    <i class="fa-solid fa-minus no-see-more"></i>
+                                                    <span><?= $i ?></span>
+                                                </label>
+                                            </td>
+                                            <td class="hide"><?= $ma_hd; ?></td>
+                                            <td class="hide"><?= $ma_kh; ?></td>
+                                            <td><?= $ten_kh; ?></td>
+                                            <td class="hide"><?= $dia_chi; ?></td>
+                                            <td class="hide"><?= $sdt; ?></td>
+                                            <td class="hide"><?= $email; ?></td>
+                                            <td><?= $tong_tien; ?> đ</td>
+                                            <td><a title="Chi tiết" href="index.php?ma_hd=<?= $ma_hd; ?>"><i class="fa-solid fa-circle-info"></i></a></td>
+                                        </tr>
+                                        <tr class="tr-child">
+                                            <td class="td-child" colspan="4">
+                                                <ul>
+                                                    <li>
+                                                        <span class="span-title">Mã hoá đơn:</span>
+                                                        <span class="span-data"><?= $ma_hd; ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="span-title">Mã khách hàng:</span>
+                                                        <span class="span-data"><?= $ma_kh; ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="span-title">Địa chỉ:</span>
+                                                        <span class="span-data"><?= $dia_chi; ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="span-title">Số điện thoại:</span>
+                                                        <span class="span-data"><?= $sdt; ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="span-title">Email:</span>
+                                                        <span class="span-data"><?= $email; ?></span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr> 
+                                <?php $i++; } } else { ?>
+                                        <tr>
+                                            <td colspan="9">Danh sách trống</td>
+                                        </tr>   
+                           <?php }?>
                         </tbody>
                     </table>
                 </div>
@@ -77,3 +90,24 @@
     </div>
 </body>
 </html>
+
+<script>
+    // XEM THÊM KHI TRÊN MOBILE VÀ TABLET
+    const trChilds = document.querySelectorAll('.tr-child');
+    const iconSeeMores = document.querySelectorAll('.see-more');
+    const iconNoSeeMores = document.querySelectorAll('.no-see-more');
+    for(let i = 0; i < iconSeeMores.length; i++) {
+        iconSeeMores[i].addEventListener('click', function() {
+            iconSeeMores[i].classList.remove('show');
+            iconSeeMores[i].classList.add('hide');
+            trChilds[i].classList.add('tr-child-show');
+            iconNoSeeMores[i].classList.add('show');
+            iconNoSeeMores[i].addEventListener('click', function(){
+                trChilds[i].classList.remove('tr-child-show');
+                iconNoSeeMores[i].classList.remove('show');
+                iconNoSeeMores[i].classList.add('hide');
+                iconSeeMores[i].classList.add('show');
+            })
+        });
+    }
+</script>

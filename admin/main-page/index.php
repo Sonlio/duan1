@@ -5,6 +5,11 @@
     // check_login();
     $VIEW = "main-page/chart.php";
 
-    $items = thong_ke_khach_hang();
+    $bills = thong_ke_don_hang_all();
+    $products = thong_ke_san_pham_all();
+    $customers = thong_ke_khach_hang();
+    $comments = thong_ke_binh_luan_all();
+    $productsOfType = thong_ke_san_pham();
+
     require "../layout.php";
 ?>

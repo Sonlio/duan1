@@ -29,44 +29,49 @@
                         <tbody>
                             <?php
                                 $i = 1;
-                                foreach ($items as $item) {
-                                    extract($item); ?>
-                                <tr>
-                                    <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i> <i class="fa-solid fa-minus no-see-more"></i><span><?= $i; ?></span></label></td>
-                                    <td class="hide"><?= $ma_kh ?></td>
-                                    <td class="td-img"><img src="<?= $CONTENT_URL ?>/images/img-admin/img-users/<?= $hinh ?>" alt=""></td>
-                                    <td><?= $ten_kh ?></td>
-                                    <td class="hide"><?= $sdt ?></td>
-                                    <td class="hide"><?= $dia_chi ?></td>
-                                    <td class="hide"><?= $email ?></td>
-                                    <td>
-                                        <a title="Sửa" href="index.php?btn_edit&ma_kh=<?= $ma_kh ?>"><i class="fa-solid fa-pen-to-square"></i></a> 
-                                        <a title="Xoá" id="delete" href="index.php?btn_delete&ma_kh=<?= $ma_kh ?>"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr class="tr-child">
-                                    <td class="td-child" colspan="4">
-                                        <ul>
-                                            <li>
-                                                <span class="span-title">Mã khách hàng:</span>
-                                                <span class="span-data"><?= $ma_kh ?></span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Số điện thoại:</span>
-                                                <span class="span-data"><?= $sdt ?></span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Địa chỉ:</span>
-                                                <span class="span-data"><?= $dia_chi ?></span>
-                                            </li>
-                                            <li>
-                                                <span class="span-title">Email:</span>
-                                                <span class="span-data"><?= $email ?></span>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr> 
-                                <?php $i++; } ?>   
+                                if(count($customers) > 0) {
+                                    foreach ($customers as $customer) {
+                                        extract($customer); ?>
+                                    <tr>
+                                        <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i> <i class="fa-solid fa-minus no-see-more"></i><span><?= $i; ?></span></label></td>
+                                        <td class="hide"><?= $ma_kh ?></td>
+                                        <td class="td-img"><img src="<?= $CONTENT_URL ?>/images/img-admin/img-users/<?= $hinh ?>" alt=""></td>
+                                        <td><?= $ten_kh ?></td>
+                                        <td class="hide"><?= $sdt ?></td>
+                                        <td class="hide"><?= $dia_chi ?></td>
+                                        <td class="hide"><?= $email ?></td>
+                                        <td>
+                                            <a title="Sửa" href="index.php?btn_edit&ma_kh=<?= $ma_kh ?>"><i class="fa-solid fa-pen-to-square"></i></a> 
+                                            <a title="Xoá" id="delete" href="index.php?btn_delete&ma_kh=<?= $ma_kh ?>"><i class="fa-solid fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr-child">
+                                        <td class="td-child" colspan="4">
+                                            <ul>
+                                                <li>
+                                                    <span class="span-title">Mã khách hàng:</span>
+                                                    <span class="span-data"><?= $ma_kh ?></span>
+                                                </li>
+                                                <li>
+                                                    <span class="span-title">Số điện thoại:</span>
+                                                    <span class="span-data"><?= $sdt ?></span>
+                                                </li>
+                                                <li>
+                                                    <span class="span-title">Địa chỉ:</span>
+                                                    <span class="span-data"><?= $dia_chi ?></span>
+                                                </li>
+                                                <li>
+                                                    <span class="span-title">Email:</span>
+                                                    <span class="span-data"><?= $email ?></span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr> 
+                                    <?php $i++; } } else { ?>
+                                    <tr>
+                                        <td colspan="8">Danh sách trống</td>
+                                    </tr>
+                                  <?php } ?>   
                         </tbody>
                     </table>
                 </div>

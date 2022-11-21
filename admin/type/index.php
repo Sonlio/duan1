@@ -27,7 +27,7 @@
     }else if(exist_param('btn_delete')){
         try{
             loai_delete($ma_loai);
-            $items = loai_select_all();
+            $types = loai_select_all();
         }catch(Exception $exc){
             $MESSAGE = 'Xoá thất bại!';
         }
@@ -36,19 +36,19 @@
     }else if(exist_param('btn_delete_all')){
         try{
             loai_delete_all();
-            $items = loai_select_all();
+            $types = loai_select_all();
         }catch(Exception $exc){
             $MESSAGE = 'Xoá thất bại!';
         }
         $VIEW = header("location: http://$DOMAIN/duan1/admin/type/index.php?btn_list");
 
     }else if(exist_param('btn_edit')){
-        $item = loai_select_by_id($ma_loai);
-        extract($item);
+        $type = loai_select_by_id($ma_loai);
+        extract($type);
         $VIEW = 'type/edit.php';
 
     }else if(exist_param('btn_list')){
-        $items = loai_select_all();
+        $types = loai_select_all();
         $amounts = amount_type();
         $VIEW = 'type/list.php';
 

@@ -10,7 +10,7 @@
     // CẬP NHẬT KHÁCH HÀNG
     function khach_hang_update($ma_kh, $ten_kh, $mat_khau, $hinh, $sdt, $dia_chi, $email, $vai_tro){
         $sql = "UPDATE khach_hang SET ten_kh=?,mat_khau=?,hinh=?,sdt=?,dia_chi=?,email=?, vai_tro=? WHERE ma_kh=?";
-        return execute($sql, $ten_kh, $mat_khau, $hinh, $email, $sdt, $dia_chi, $email, $vai_tro==1, $ma_kh);
+        return execute($sql, $ten_kh, $mat_khau, $hinh, $sdt, $dia_chi, $email, $vai_tro==1, $ma_kh);
     }
     
     // XOÁ KHÁCH HÀNG

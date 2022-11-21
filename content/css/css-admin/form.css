@@ -74,8 +74,8 @@ textarea:focus,.form-control:focus {
     transition: 0.5s ease;
 }
 
-textarea:not(:placeholder-shown) ~.label-field,.form-control:not(:placeholder-shown) ~.label-field,
-textarea:focus ~.label-field,.form-control:focus ~.label-field {
+textarea:not(:placeholder-shown) ~.label-field, .form-control:not(:placeholder-shown) ~.label-field,
+textarea:focus ~.label-field, .form-control:focus ~.label-field {
     color: rgb(87, 3, 87);
     top: -9px;
     padding: 0px 7px;

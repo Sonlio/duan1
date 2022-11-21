@@ -26,11 +26,10 @@
         }
     }
 
-    // XOÁ TẤT BÌNH LUẬN
-    function binh_luan_delete_all(){
-        $sql = "DELETE FROM binh_luan";
-        return execute($sql);
-       
+    // XOÁ TẤT CẢ BÌNH LUẬN
+    function binh_luan_delete_all($ma_sp){
+        $sql = "DELETE FROM binh_luan WHERE ma_sp=?";
+        return execute($sql, $ma_sp);
     }
    
     // LẤY TẤT CẢ BÌNH LUẬN
@@ -53,7 +52,7 @@
     
     // LẤY BÌNH LUẬN THEO MÃ HÀNG HOÁ
     function binh_luan_select_by_hang_hoa($ma_sp){
-        $sql = "SELECT binh_luan.*, san_pham.ten_sp, khach_hang.ho_ten, khach_hang.hinh FROM binh_luan JOIN san_pham ON san_pham.ma_sp=binh_luan.ma_sp
+        $sql = "SELECT binh_luan.*, san_pham.ten_sp, khach_hang.ten_kh, khach_hang.hinh FROM binh_luan JOIN san_pham ON san_pham.ma_sp = binh_luan.ma_sp
                 JOIN khach_hang on binh_luan.ma_kh = khach_hang.ma_kh WHERE binh_luan.ma_sp=? ORDER BY thoi_gian_bl DESC";
         return query_all($sql, $ma_sp);
     }

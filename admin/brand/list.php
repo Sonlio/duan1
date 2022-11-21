@@ -24,19 +24,24 @@
                         </thead>
                         <tbody>
                             <?php
+                                if(count($brands) > 0) {
                                 $i = 1;
-                                foreach ($items as $item) {
-                                    extract($item); ?>                            
-                                <tr>
-                                    <td><?= $i; ?></td>
-                                    <td><?= $ten_hang; ?></td>
-                                    <td><?= $ma_hang ?></td>
-                                    <td>
-                                        <a title="Sửa" href="index.php?btn_edit&ma_hang=<?= $ma_hang; ?>"><i class="fa-solid fa-pen-to-square"></i></a> 
-                                        <a title="Xoá" id="delete" href="index.php?btn_delete&ma_hang=<?= $ma_hang; ?>"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            <?php $i++; } ?>                       
+                                    foreach ($brands as $brand) {
+                                        extract($brand); ?>                            
+                                    <tr>
+                                        <td><?= $i; ?></td>
+                                        <td><?= $ten_hang; ?></td>
+                                        <td><?= $ma_hang ?></td>
+                                        <td>
+                                            <a title="Sửa" href="index.php?btn_edit&ma_hang=<?= $ma_hang; ?>"><i class="fa-solid fa-pen-to-square"></i></a> 
+                                            <a title="Xoá" id="delete" href="index.php?btn_delete&ma_hang=<?= $ma_hang; ?>"><i class="fa-solid fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php $i++; } } else { ?>
+                                    <tr>
+                                        <td colspan="4">Danh sách trống</td>
+                                    </tr>
+                                <?php } ?>                       
                         </tbody>
                     </table>
                 </div>

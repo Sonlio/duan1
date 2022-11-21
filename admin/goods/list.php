@@ -18,7 +18,7 @@
                             <tr>
                                 <th class="sort">STT</th>
                                 <th>Hình ảnh</th>
-                                <th class="hide">Mã đồng hồ</th>
+                                <th class="hide">Mã sản phẩm</th>
                                 <th>Tên đồng hồ</th>
                                 <th class="hide">Đơn giá</th>
                                 <th class="hide">Giảm giá</th>
@@ -27,41 +27,45 @@
                         </thead>
                         <tbody>
                             <?php
-                                $i = 1;
-                                foreach($items as $item) {
-                                    extract($item); ?>
-                                    <tr>
-                                        <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i> <i class="fa-solid fa-minus no-see-more"></i><span><?= $i ?></span></label></td>
-                                        <td class="td-img"><img src="<?= $CONTENT_URL ?>/images/img-admin/img-products/<?= $hinh ?>" alt=""></td>
-                                        <td class="hide"><?= $ma_sp ?></td>
-                                        <td><?= $ten_sp ?></td>
-                                        <td class="hide"><?= $don_gia ?> đ</td>
-                                        <td class="hide"><?= $giam_gia ?>%</td>
-                                        <td>
-                                            <a title="Sửa" href="index.php?btn_edit&ma_sp=<?= $ma_sp ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                            <a title="Xoá" id="delete" href="index.php?btn_delete&ma_sp=<?= $ma_sp ?>"><i class="fa-solid fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="tr-child">
-                                        <td class="td-child" colspan="4">
-                                            <ul>
-                                                <li>
-                                                    <span class="span-title">Mã đồng hồ:</span>
-                                                    <span class="span-data"><?= $ma_sp ?></span>
-                                                </li>
-                                                <li>
-                                                    <span class="span-title">Đơn giá:</span>
-                                                    <span class="span-data"><?= $don_gia ?> đ</span>
-                                                </li>
-                                                <li>
-                                                    <span class="span-title">Giảm giá:</span>
-                                                    <span class="span-data"><?= $giam_gia ?>%</span>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                            <?php $i++; }
-                            ?>
+                                if(count($products) > 0) {
+                                    $i = 1;
+                                    foreach($products as $product) {
+                                        extract($product); ?>
+                                        <tr>
+                                            <td><label for="checkbox_see_more" class="td-see-more"><i class="fa-solid fa-plus see-more show"></i> <i class="fa-solid fa-minus no-see-more"></i><span><?= $i ?></span></label></td>
+                                            <td class="td-img"><img src="<?= $CONTENT_URL ?>/images/img-admin/img-products/<?= $hinh ?>" alt=""></td>
+                                            <td class="hide"><?= $ma_sp ?></td>
+                                            <td><?= $ten_sp ?></td>
+                                            <td class="hide"><?= $don_gia ?> đ</td>
+                                            <td class="hide"><?= $giam_gia ?>%</td>
+                                            <td>
+                                                <a title="Sửa" href="index.php?btn_edit&ma_sp=<?= $ma_sp ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a title="Xoá" id="delete" href="index.php?btn_delete&ma_sp=<?= $ma_sp ?>"><i class="fa-solid fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="tr-child">
+                                            <td class="td-child" colspan="4">
+                                                <ul>
+                                                    <li>
+                                                        <span class="span-title">Mã sản phẩm:</span>
+                                                        <span class="span-data"><?= $ma_sp ?></span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="span-title">Đơn giá:</span>
+                                                        <span class="span-data"><?= $don_gia ?> đ</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="span-title">Giảm giá:</span>
+                                                        <span class="span-data"><?= $giam_gia ?>%</span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                <?php $i++; } } else { ?>
+                                        <tr>
+                                            <td colspan="7">Danh sách trống</td>
+                                        </tr>
+                               <?php } ?>
                         </tbody>
                     </table>
                 </div>

@@ -35,7 +35,7 @@
     }else if(exist_param("btn_delete")){
         try {
             san_pham_delete($ma_sp);
-            $items = san_pham_select_page();
+            $products = san_pham_select_page();
         } 
         catch (Exception $exc) {
             $MESSAGE = "Xóa thất bại!";
@@ -45,7 +45,7 @@
     }else if(exist_param("btn_delete_all")){
         try {
             san_pham_delete_all();
-            $items = san_pham_select_page();
+            $products = san_pham_select_page();
         } 
         catch (Exception $exc) {
             $MESSAGE = "Xóa thất bại!";
@@ -53,12 +53,12 @@
         $VIEW = header("location: http://localhost/duan1/admin/goods/index.php?btn_list");
 
     }else if(exist_param("btn_edit")){
-        $item = san_pham_select_by_id($ma_sp);
-        extract($item);
-        $VIEW = header("location: http://localhost/duan1/admin/goods/index.php?btn_list");
+        $product = san_pham_select_by_id($ma_sp);
+        extract($product);
+        $VIEW = "goods/edit.php";
 
     }else if(exist_param("btn_list")){
-        $items = san_pham_select_page();
+        $products = san_pham_select_page();
         $amounts = amount_goods();
         $VIEW = "goods/list.php";
 

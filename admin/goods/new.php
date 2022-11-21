@@ -11,13 +11,13 @@
                     <br>
                     <form action="index.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label class="control-label" for="id_product">Mã đồng hồ</label>
+                            <label class="control-label" for="id_product">Mã sản phẩm</label>
                             <input class="readonly form-control" type="text" name="ma_sp" id="id_product" readonly value="Auto number">
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="name_product">Tên đồng hồ <strong>*</strong></label>
+                            <label class="control-label" for="name_product">Tên sản phẩm <strong>*</strong></label>
                             <input type="text" class="form-control" name="ten_sp" id="name_product" placeholder=" "> <br>
-                            <label for="" class="label-field">Tên đồng hồ</label>
+                            <label for="" class="label-field">Tên sản phẩm</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="price_product">Đơn giá <strong>*</strong></label>

@@ -12,9 +12,6 @@
                 </div>
                 <div class="content-panel">
                     <br>
-                    <?php 
-                        echo "<h5 class='notifications'>$MESSAGE</h5>";
-                    ?>
                     <form action="index.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label class="control-label" for="id_customer">Mã khách hàng <strong>*</strong></label>
@@ -52,8 +49,8 @@
                         <div class="form-group">
                             <label class="control-label" for="">Vai trò <strong>*</strong></label>
                             <div class="border-radio">
-                                <input type="radio" class="form-control-radio" name="vai_tro" id="admin" value="1" <?= $vai_tro?'checked':'' ?>> <label for="admin">Nhân viên</label>
-                                <input type="radio" class="form-control-radio" name="vai_tro" id="customer" value="0" <?= !$vai_tro?'checked':'' ?>> <label for="customer">Khách hàng</label>
+                                <input type="radio" class="form-control-radio"  name="vai_tro" value="0" <?php echo !$vai_tro?'checked':'' ?> id="customer"><label for="customer">Khách hàng</label>
+                                <input type="radio" class="form-control-radio" name="vai_tro" value="1" <?php echo $vai_tro?'checked':'' ?> id="admin"> <label for="admin">Nhân viên</label>
                             </div>
                         </div>
                         <div class="form-group-btn">
