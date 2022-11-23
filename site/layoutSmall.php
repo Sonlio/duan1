@@ -17,9 +17,6 @@
             <?php require 'layout/header.php'; ?>
         </header>
 
-        <!-- BANNER -->
-        <?php require 'layout/banner.php'; ?>
-
         <!-- CONTAINER -->
         <div class="container">
             <?php require $VIEW; ?>

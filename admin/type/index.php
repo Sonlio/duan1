@@ -14,7 +14,7 @@
         }catch(Exception $exc){
             $MESSAGE = 'Thêm mới thất bại!';
         }
-        $VIEW = header("location: http://$DOMAIN/duan1/admin/type/index.php?btn_list"); 
+        $VIEW = header("location: $ROOT_URL/admin/type/index.php?btn_list"); 
 
     }else if(exist_param('btn_update')){
         try{
@@ -22,7 +22,7 @@
         }catch(Exception $exc){
             $MESSAGE = 'Cập nhật thát bại!';
         }
-        $VIEW = header("location: http://$DOMAIN/duan1/admin/type/index.php?btn_list");
+        $VIEW = header("location: $ROOT_URL/admin/type/index.php?btn_list");
 
     }else if(exist_param('btn_delete')){
         try{
@@ -31,7 +31,7 @@
         }catch(Exception $exc){
             $MESSAGE = 'Xoá thất bại!';
         }
-        $VIEW = header("location: http://$DOMAIN/duan1/admin/type/index.php?btn_list");
+        $VIEW = header("location: $ROOT_URL/admin/type/index.php?btn_list");
 
     }else if(exist_param('btn_delete_all')){
         try{
@@ -40,7 +40,7 @@
         }catch(Exception $exc){
             $MESSAGE = 'Xoá thất bại!';
         }
-        $VIEW = header("location: http://$DOMAIN/duan1/admin/type/index.php?btn_list");
+        $VIEW = header("location: $ROOT_URL/admin/type/index.php?btn_list");
 
     }else if(exist_param('btn_edit')){
         $type = loai_select_by_id($ma_loai);

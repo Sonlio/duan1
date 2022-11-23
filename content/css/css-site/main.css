@@ -8,6 +8,7 @@ body {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    margin-top: 90px;
 }
 
 li {
@@ -19,7 +20,7 @@ a {
 }
 
 /* HEADER MENU */
-.header-menu {
+/* .header-menu {
     position: absolute;
     z-index: 20;
     display: flex;
@@ -28,10 +29,19 @@ a {
     height: 90px;
     width: 100%;
     transition: ease-in-out 0.4s;
-}
+} */
 
-.logo {
-    margin-left: 10%;
+.header-menu {
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    transition: ease-in-out 0.4s;
+    background-color: #000;
+    top: 0px;
+    position: fixed;
 }
 
 .logo > a > img {
@@ -105,6 +115,7 @@ a {
     text-align: left;
     display: none;
     animation: fadeIn ease-in 0.3s;
+    z-index: 100;
 }
 
 .child-menu::before {
@@ -115,6 +126,7 @@ a {
     right: 0px;
     background-color: transparent;
     transform: translateY(-100%);
+    z-index: 10;
 }
 
 .child-menu > li:first-child::before {
@@ -197,6 +209,7 @@ a {
     border-radius: 10px;
     border: 1px solid #e2ba48;
     display: none;
+    z-index: 100;
 }
 
 .search::before {
@@ -448,7 +461,7 @@ a {
 
 .slider-prev, .slider-next {
     position: absolute;
-    top: 48%;
+    top: 40%;
     font-size: 27px;
     padding: 5px 11px;
     border-radius: 50%;
@@ -509,6 +522,11 @@ a {
 }
 
 /* CONTAINER */
+/* #col-product {
+    transform: translateX(-500%);
+    transition: 2s;
+} */
+
 .title-category {
     color: #3c3451;
     font-size: 35px;
@@ -566,7 +584,7 @@ a {
     color: #fff;
     font-weight: bold;  
     line-height: 48px;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .product-item-img img{
@@ -614,8 +632,159 @@ a {
     margin-left: 5px;
 }
 
+.list-product-empty {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.show-more-product {
+    text-align: center;
+}
+
+.show-more-product > a {
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.595);
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+.show-more-product > a:hover {
+    background-color: #000;
+    transition: 0.5s;
+}
+
+.wrapper-root-type {
+    padding-top: 30px;
+}
+
+.root-type-name, .root-type, .divider{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.root-type, .divider{
+    color: rgba(102,102,102,0.7);
+}
+
+.root-type-name {
+    font-weight: bold;
+}
+
+.root-type:hover {
+    color: #000;
+}
+
+/* ABOUT AND CONTACT */
+.about, .contact{
+    margin-bottom: 30px;
+}
+
+.main-about {
+    border-bottom: 1px solid #ccc;
+}
+
+.heading-about {
+    color: #1c1c1c;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0px;
+    text-transform: uppercase;
+}
+
+.banner-about img {
+    width: 100%;
+}
+
+.content-about {
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+}
+
+.content-about:hover .icon-about {
+    background-color: #e2ba48;
+    transition: 0.3s ease-in-out;
+}
+
+.icon-about {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #e2ba48;
+    margin: 0px;
+    margin: auto;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.icon-about img {
+    width: 65%;
+    margin-top: 20%;
+}
+
+.title-about {
+    color: #1c1c1c;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.des-about {
+    color: #353535;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.info-about, .main-contact{
+    display: flex;
+    padding: 40px 20px 0px 20px;
+}
+
+.icon-info-about{
+    width: 110px;
+}
+
+.icon-info-about img{
+    width: 100%;
+}
+
+.content-info-about, .content-contact{
+    padding-left: 20px;
+}
+
+.title-info-about{
+    margin: 0px;
+    font-size: 17px;
+    color: #1c1c1c;
+}
+
+.des-info-about, .des-contact{
+    line-height: 1.6;
+    color: #353535;
+}
+
+.des-contact {
+    margin-top: 10px;
+}
+
+.icon-contact > i {
+    padding: 7px 7px;
+    font-size: 27px;
+    color: #fff;
+    background-color: #000;
+}
+
+.title-contact {
+    color: #1c1c1c;
+    font-size: 18px;
+    margin: 0px;
+}
+
+/* DETAIL */
+
+
 /* FOOTER */
 .footer-wrapper {
+    margin-top: 30px;
     background-color: rgb(0, 0, 0);
 }
 

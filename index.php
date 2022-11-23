@@ -1,3 +1,3 @@
 <?php
-    header("location: site/main-page");
+    header("location: /duan1/site/main-page/");
 ?>

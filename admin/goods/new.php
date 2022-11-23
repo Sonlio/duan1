@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label class="control-label" for="discount_product">Giảm giá <strong>*</strong></label>
                             <input type="text" class="form-control" name="giam_gia" id="discount_product" placeholder=" "> <br>
-                            <label for="" class="label-field">Giảm giá</label>
+                            <label for="" class="label-field">%</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="pic_product">Hình ảnh <strong>*</strong></label>

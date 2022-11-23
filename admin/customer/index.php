@@ -16,7 +16,7 @@
         }catch(Exception $exc){
             $MESSAGE = 'Thêm mới thất bại';
         }
-         $VIEW = header("location: http://$DOMAIN/duan1/admin/customer/index.php?btn_list");
+         $VIEW = header("location: $ROOT_URL/admin/customer/index.php?btn_list");
 
         }else if(exist_param("btn_update")){
             $up_hinh = save_file("up_hinh", "$IMAGE_DIR/img-admin/img-users/");
@@ -27,7 +27,7 @@
             catch (Exception $exc) {
                 $MESSAGE = "Cập nhật thất bại!";
             }
-            $VIEW = header("location: http://$DOMAIN/duan1/admin/customer/index.php?btn_list");
+            $VIEW = header("location: $ROOT_URL/admin/customer/index.php?btn_list");
 
         }else if(exist_param("btn_delete")){
             try {
@@ -37,7 +37,7 @@
             catch (Exception $exc) {
                 $MESSAGE = "Xóa thất bại!";
             }
-            $VIEW = header("location: http://$DOMAIN/duan1/admin/customer/index.php?btn_list");
+            $VIEW = header("location: $ROOT_URL/admin/customer/index.php?btn_list");
 
         }else if(exist_param("btn_delete_all")){
             try {
@@ -47,7 +47,7 @@
             catch (Exception $exc) {
                 $MESSAGE = "Xóa thất bại!";
             }
-            $VIEW = header("location: http://$DOMAIN/duan1/admin/customer/index.php?btn_list");
+            $VIEW = header("location: $ROOT_URL/admin/customer/index.php?btn_list");
 
         }else if(exist_param("btn_edit")){
             $customer = khach_hang_select_by_id($ma_kh);

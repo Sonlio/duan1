@@ -11,6 +11,12 @@
                         <a href="index.php?btn_delete_all" id="delete_all" class="btn-delete-all">Xóa tất cả</a>
                     </ul>
                 </div>
+                <!-- <ul class="pagination">
+                    <li><a class="pre" href="?btn_list&page_no=0"><i class="fa-solid fa-backward"></i></a></li>
+                    <li><a href="?btn_list&page_no=<?=$_SESSION['page_no']-1?>">&lt;&lt;</a></li>
+                    <li><a href="?btn_list&page_no=<?=$_SESSION['page_no']+1?>">&gt;&gt;</a></li>
+                    <li><a class="next" href="?btn_list&page_no=<?=$_SESSION['page_count']-1?>"><i class="fa-solid fa-forward"></i></a></li>
+                </ul> -->
                 <div class="content-panel">
                     <br>
                     <table class="table">

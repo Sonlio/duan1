@@ -8,7 +8,6 @@
     // Định nghĩa đường dẫn ảnh
     $IMAGE_DIR = $_SERVER["DOCUMENT_ROOT"] . "$ROOT_URL/content/images";
 
-    $DOMAIN = "localhost";
     $VIEW = 'index.php';
     $MESSAGE = '';
 

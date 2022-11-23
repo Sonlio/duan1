@@ -35,7 +35,7 @@
 
     // LẤY TẤT CẢ LOẠI HÀNG
     function loai_select_all(){
-        $sql = "SELECT * FROM loai ORDER BY ma_loai DESC";
+        $sql = "SELECT * FROM loai";
         return query_all($sql);
     }
     

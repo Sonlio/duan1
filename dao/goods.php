@@ -35,7 +35,7 @@
 
     // LẤY TẤT CẢ SẢN PHẨM
     function san_pham_select_all(){
-        $sql = "SELECT * FROM san_pham";
+        $sql = "SELECT san_pham.*, loai.* FROM san_pham JOIN loai on san_pham.ma_loai=loai.ma_loai /*ORDER BY san_pham.ma_sp ASC limit 0, 24*/";
         return query_all($sql);
     }
     
@@ -53,7 +53,7 @@
     
     // LẤY SẢN PHẨM THEO LOẠI
     function san_pham_select_by_loai($ma_loai){
-        $sql = "SELECT * FROM san_pham WHERE ma_loai=?";
+        $sql = "SELECT san_pham.*, loai.* FROM san_pham JOIN loai on san_pham.ma_loai=loai.ma_loai WHERE loai.ma_loai=?";
         return query_all($sql, $ma_loai);
     }
         
@@ -70,7 +70,7 @@
         }
         if(!isset($_SESSION['page_count'])){
             $row_count = query_value("SELECT count(*) FROM san_pham");
-            $_SESSION['page_count'] = ceil($row_count/ 20);
+            $_SESSION['page_count'] = ceil($row_count/ 1000);
         }
         if(exist_param("page_no")){
             $_SESSION['page_no'] = $_REQUEST['page_no'];
@@ -81,7 +81,7 @@
         if($_SESSION['page_no'] >= $_SESSION['page_count']){
             $_SESSION['page_no'] = 0;
         }
-        $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC LIMIT ".$_SESSION['page_no'].", 20";
+        $sql = "SELECT * FROM san_pham ORDER BY ma_sp DESC LIMIT ".$_SESSION['page_no'].", 1000";
         return query_all($sql);
     }
 

@@ -1,16 +1,59 @@
+// ẨN HIỆN FORM LOGIN
 window.addEventListener("load", function() {
     // ẨN HIỆN BACKGROUND MENU
-    const headerMenu = document.querySelector('.header-menu');
+    // const headerMenu = document.querySelector('.header-menu');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY >= 30) {
-            headerMenu.style = 'position: fixed; background-color: rgb(0, 0, 0);'
-        } else {
-            headerMenu.style = 'background-color: transparent;'
-        }
+    // window.addEventListener('scroll', () => {
+    //     if (window.scrollY >= 30) {
+    //         headerMenu.style = 'position: fixed; background-color: rgb(0, 0, 0);'
+    //     } else {
+    //         headerMenu.style = 'background-color: transparent;'
+    //     }
+    // })
+
+    const iconShowLogins = document.querySelectorAll('.icon-show-login')
+    const wrapperLogin = document.querySelector('.wrapper-login')
+    const mainLogin = document.querySelector('.main-login')
+    const iconCloseLogin = document.querySelector('.icon-close-form-login')
+
+    // Hiển thị form login (thêm class open vào wrapper-login)
+    function showFormLogin() {
+            wrapperLogin.classList.add('open')
+    }
+
+    // Nhận sự kiện click của nút icon user
+    for(const iconShowLogin of iconShowLogins) {
+        iconShowLogin.addEventListener("click", showFormLogin)
+    }
+    
+    // Ẩn form login (gở bỏ class open trong wrapper-login)
+    function hideFormLogin() {
+            wrapperLogin.classList.remove('open')
+    }
+    // Nghe hành vi click vào button close
+    iconCloseLogin.addEventListener('click', hideFormLogin)
+
+    // Nghe hành vi click bên ngoài (Xóa open trong wrapper-login)
+    wrapperLogin.addEventListener('click', hideFormLogin)
+
+    // Không xóa class open khi click vào mainLogin
+    mainLogin.addEventListener('click', function (event) {
+            event.stopPropagation()
     })
 
-    // SLIDE SHOW
+    // ACTIVE LINKS
+    const currentLocation = location.href;
+    const links = document.querySelectorAll('.link');
+    const amountLinks = links.length;
+    for (let i = 0; i < amountLinks; i++) {
+        if(links[i].href === currentLocation) {
+            links[i].className = "active";
+        }
+    }
+});
+
+// SLIDE SHOW
+window.addEventListener("load", function() {
     const slider = document.querySelector('.slider');
     const sliderMain = document.querySelector('.slider-main');
     const sliderItems = document.querySelectorAll('.slider-item');
@@ -60,45 +103,16 @@ window.addEventListener("load", function() {
         [...dotItems].forEach(de => de.classList.remove("dot-selected"));
         dotItems[index].classList.add("dot-selected");
     }
-
-    // ẨN HIỆN FORM LOGIN
-    const iconShowLogins = document.querySelectorAll('.icon-show-login')
-    const wrapperLogin = document.querySelector('.wrapper-login')
-    const mainLogin = document.querySelector('.main-login')
-    const iconCloseLogin = document.querySelector('.icon-close-form-login')
-
-    // Hiển thị form login (thêm class open vào wrapper-login)
-    function showFormLogin() {
-            wrapperLogin.classList.add('open')
-    }
-
-    // Nhận sự kiện click của nút icon user
-    for(const iconShowLogin of iconShowLogins) {
-        iconShowLogin.addEventListener("click", showFormLogin)
-    }
-    
-    // Ẩn form login (gở bỏ class open trong wrapper-login)
-    function hideFormLogin() {
-            wrapperLogin.classList.remove('open')
-    }
-    // Nghe hành vi click vào button close
-    iconCloseLogin.addEventListener('click', hideFormLogin)
-
-    // Nghe hành vi click bên ngoài (Xóa open trong wrapper-login)
-    wrapperLogin.addEventListener('click', hideFormLogin)
-
-    // Không xóa class open khi click vào mainLogin
-    mainLogin.addEventListener('click', function (event) {
-            event.stopPropagation()
-    })
-
-    // ACTIVE LINKS
-    const currentLocation = location.href;
-    const links = document.querySelectorAll('.link');
-    const amountLinks = links.length;
-    for (let i = 0; i < amountLinks; i++) {
-        if(links[i].href === currentLocation) {
-            links[i].className = "active";
-        }
-    }
 });
+
+// // ANIMATION
+// window.addEventListener("load", function() {
+//     const colProducts = document.querySelectorAll('#col-product');
+//     window.addEventListener('scroll', () => {
+//         if (window.scrollY > 50) {
+//             [...colProducts].forEach(product => product.style ='transform: translateX(0);')
+//         }else {
+//             [...colProducts].forEach(product => product.style ='transform: translateX(-500%);')
+//         }
+//     });
+// });
