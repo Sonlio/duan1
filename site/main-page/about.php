@@ -54,7 +54,7 @@
             </div>
 
             <div class="row no-gutters">
-                <div class="col l-4 m-4 c-12">
+                <div class="col l-4 m-4 c-12 box-about">
                     <div class="info-about">
                         <div class="icon-info-about">
                             <img src="../../content/images/img-site/icon-watch.png" alt="">
@@ -62,12 +62,13 @@
                         <div class="content-info-about">
                             <h3 class="title-info-about">Hàng chính hãng</h3>
                             <p class="des-info-about">
-                                Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay
+                                Chúng tôi cam kết mang đến cho quý khách hàng những sản phẩm chính hãng theo đúng tiêu chuẩn của nhà sản xuất,
+                                không bán hàng kém chất lượng, không bán hàng giả/ hàng nhái, không bán hàng không rõ nguồn gốc xuất xứ.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col l-4 m-4 c-12">
+                <div class="col l-4 m-4 c-12 box-about">
                     <div class="info-about">
                         <div class="icon-info-about">
                             <img src="../../content/images/img-site/icon-new.png" alt="">
@@ -75,12 +76,13 @@
                         <div class="content-info-about">
                             <h3 class="title-info-about">Sản phẩm mới 100%</h3>
                             <p class="des-info-about">
-                                Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay
+                                Sản phẩm mà chúng tôi kinh doanh đều là các mặt hàng chính hãng tới từ nước ngoài... 
+                                với chất lượng luôn được đảm bảo ở mức cao nhất.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col l-4 m-4 c-12">
+                <div class="col l-4 m-4 c-12 box-about">
                     <div class="info-about">
                         <div class="icon-info-about">
                             <img src="../../content/images/img-site/icon-insurance.png" alt="">
@@ -88,12 +90,13 @@
                         <div class="content-info-about">
                             <h3 class="title-info-about">Bảo hành 12 tháng</h3>
                             <p class="des-info-about">
-                                Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay
+                                Để phục vụ quý khách có một trải nghiệm tốt nhất, chúng tôi xin cam kết bảo hành 12 tháng
+                                nếu sản phẩm có lỗi từ nhà sản xuất
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col l-4 m-4 c-12">
+                <div class="col l-4 m-4 c-12 box-about">
                     <div class="info-about">
                         <div class="icon-info-about">
                             <img src="../../content/images/img-site/icon-change.png" alt="">
@@ -101,12 +104,13 @@
                         <div class="content-info-about">
                             <h3 class="title-info-about">Đổi trả trong vòng 7 ngày</h3>
                             <p class="des-info-about">
-                                Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay
+                               Chúng tôi xây dựng chính sách đổi, trả, hoàn tiền trên tinh thần bảo vệ quyền lợi người tiêu dùng 
+                               nhằm cam kết với quý khách về chất lượng sản phẩm và dịch vụ của chúng tôi.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col l-4 m-4 c-12">
+                <div class="col l-4 m-4 c-12 box-about">
                     <div class="info-about">
                         <div class="icon-info-about">
                             <img src="../../content/images/img-site/icon-freeship.png" alt="">
@@ -114,12 +118,13 @@
                         <div class="content-info-about">
                             <h3 class="title-info-about">Miễn phí giao hàng</h3>
                             <p class="des-info-about">
-                                Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay
+                                Chính sách giao hàng miễn phí, nhanh chóng, an toàn trên toàn quốc. Chúng tôi có hệ thống phân phối, 
+                                giao hàng miễn phí trên toàn quốc.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col l-4 m-4 c-12">
+                <div class="col l-4 m-4 c-12 box-about">
                     <div class="info-about">
                         <div class="icon-info-about">
                             <img src="../../content/images/img-site/icon-saveprice.png" alt="">
@@ -127,7 +132,8 @@
                         <div class="content-info-about">
                             <h3 class="title-info-about">Giá cả hợp lý</h3>
                             <p class="des-info-about">
-                                Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay
+                                Chúng tôi cam kết cung cấp sản phẩm với mức giá cạnh tranh nhất trên thị trường. 
+                                Giá cả hợp lý sản phẩm đẹp uy tín, chất lượng đúng như cam kết.
                             </p>
                         </div>
                     </div>

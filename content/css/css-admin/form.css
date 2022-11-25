@@ -44,6 +44,11 @@
     width: 15%;
 }
 
+#cke_describe_product {
+    margin-left: 20px;
+    width: 50%;
+}
+
 strong {
     color: red;
 }

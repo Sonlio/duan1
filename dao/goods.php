@@ -2,9 +2,9 @@
     require_once '../../pdo.php';
 
     // THÊM SẢN PHẨM
-    function san_pham_insert($ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai){
-        $sql = "INSERT INTO san_pham(ten_sp, don_gia, giam_gia, hinh, mo_ta, ma_hang, ma_loai) VALUES (?,?,?,?,?,?,?)";
-        execute($sql, $ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai);   
+    function san_pham_insert($ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai, $so_luot_xem){
+        $sql = "INSERT INTO san_pham(ten_sp, don_gia, giam_gia, hinh, mo_ta, ma_hang, ma_loai, so_luot_xem) VALUES (?,?,?,?,?,?,?,?)";
+        execute($sql, $ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai, $so_luot_xem);   
     }
 
     // CẬP NHẬT SẢN PHẨM
@@ -35,14 +35,20 @@
 
     // LẤY TẤT CẢ SẢN PHẨM
     function san_pham_select_all(){
-        $sql = "SELECT san_pham.*, loai.* FROM san_pham JOIN loai on san_pham.ma_loai=loai.ma_loai /*ORDER BY san_pham.ma_sp ASC limit 0, 24*/";
+        $sql = "SELECT san_pham.*, loai.* FROM san_pham JOIN loai on san_pham.ma_loai=loai.ma_loai ORDER BY san_pham.ma_sp DESC";
         return query_all($sql);
     }
-    
+
     // LẤY SẢN PHẨM THEO ID
     function san_pham_select_by_id($ma_sp){
         $sql = "SELECT * FROM san_pham WHERE ma_sp=?";
         return query_one($sql, $ma_sp);
+    }
+
+    // LẤY SẢN PHẨM ĐƯỢC GIẢM GIÁ
+    function san_pham_select_giam_gia(){
+        $sql = "SELECT san_pham.*, loai.* FROM san_pham JOIN loai on loai.ma_loai=san_pham.ma_loai WHERE giam_gia > 0";
+        return query_all($sql);
     }
     
     // KIỂM TRA SỰ TỒN TẠI CỦA SẢN PHẨM
@@ -62,7 +68,19 @@
         $sql = "SELECT * FROM san_pham JOIN loai ON loai.ma_loai=san_pham.ma_loai WHERE ten_sp LIKE ? OR ten_loai LIKE ?";
         return query_all($sql, '%'.$keyword.'%', '%'.$keyword.'%');
     }
-        
+    
+    // TĂNG SỐ LƯỢT XEM CỦA HÀNG HOÁ
+    function san_pham_tang_so_luot_xem($ma_hh){
+        $sql = "UPDATE san_pham SET so_luot_xem = so_luot_xem + 1 WHERE ma_sp=?";
+        execute($sql, $ma_hh);
+    }
+    
+    // LẤY SẢN PHẨM NHIỀU LƯỢT XEM NHẤT
+    function san_pham_select_so_luot_xem(){
+        $sql = "SELECT * FROM san_pham JOIN loai on loai.ma_loai=san_pham.ma_loai WHERE so_luot_xem > 0 ORDER BY so_luot_xem DESC LIMIT 0, 8";
+        return query_all($sql);
+    }
+
     // PHÂN TRANG
     function san_pham_select_page(){
         if(!isset($_SESSION['page_no'])){

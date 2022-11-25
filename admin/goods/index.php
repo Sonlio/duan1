@@ -12,8 +12,8 @@
         $up_hinh = save_file("hinh", "$IMAGE_DIR/img-admin/img-products/");
         $hinh = strlen($up_hinh) > 0 ? $up_hinh : 'product.png';
         try {
-            san_pham_insert($ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai);
-            unset($ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai);
+            san_pham_insert($ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai, $so_luot_xem);
+            unset($ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai, $so_luot_xem);
         } 
         catch (Exception $exc) {
             $MESSAGE = "Thêm mới thất bại!";
@@ -24,7 +24,7 @@
         $up_hinh = save_file("up_hinh", "$IMAGE_DIR/img-admin/img-products/");
         $hinh = strlen($up_hinh) > 0 ? $up_hinh : $hinh;
         try {
-            san_pham_update($ma_sp, $ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai);
+            san_pham_update($ma_sp, $ten_sp, $don_gia, $giam_gia, $hinh, $mo_ta, $ma_hang, $ma_loai, $so_luot_xem);
         } 
         catch (Exception $exc) {
             echo $exc->getMessage();

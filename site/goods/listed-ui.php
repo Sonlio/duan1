@@ -14,7 +14,7 @@
                 <?php
                     foreach($products as $product) { ?>
                         <div class="col l-3 m-3 c-6">
-                            <a href="#" class="product-item">
+                            <a href="<?= $SITE_URL ?>/goods/detail.php?ma_sp=<?= $product['ma_sp'] ?>" class="product-item">
                                 <div class="content-product-item">
                                     <?php 
                                         if($product['giam_gia'] > 0) { ?>

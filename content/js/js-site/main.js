@@ -42,14 +42,31 @@ window.addEventListener("load", function() {
     })
 
     // ACTIVE LINKS
-    const currentLocation = location.href;
-    const links = document.querySelectorAll('.link');
-    const amountLinks = links.length;
-    for (let i = 0; i < amountLinks; i++) {
-        if(links[i].href === currentLocation) {
-            links[i].className = "active";
-        }
-    }
+    // const currentLocation = location.href;
+    // const links = document.querySelectorAll('.link');
+    // const amountLinks = links.length;
+    // for (let i = 0; i < amountLinks; i++) {
+    //     if(links[i].href === currentLocation) {
+    //         links[i].className = "active";
+    //     }
+    // }
+});
+
+// TABS
+window.addEventListener("load", function() {
+    $('.tab-links li:first-child').addClass('active');
+    $('.tab-content').hide();
+    $('.tab-content:first').show();
+
+    $('.tab-links li').click(function(){
+        $('.tab-links li').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-content').hide();
+
+        var activeTab = $(this).find('a').attr('href');
+        $(activeTab).fadeIn();
+        return false;
+    })
 });
 
 // SLIDE SHOW
@@ -105,7 +122,7 @@ window.addEventListener("load", function() {
     }
 });
 
-// // ANIMATION
+// ANIMATION
 // window.addEventListener("load", function() {
 //     const colProducts = document.querySelectorAll('#col-product');
 //     window.addEventListener('scroll', () => {

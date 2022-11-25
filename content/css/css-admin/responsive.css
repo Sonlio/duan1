@@ -59,6 +59,9 @@
     .form-control, select, textarea, .border-radio{
         width: 70%;
     }
+    #cke_describe_product {
+        width: 70%;
+    }
     .label-field {
         left: 25%;
     }
@@ -111,6 +114,10 @@
     .form-control, select, textarea, .border-radio{
         margin-left: 0px;
         width: 100%;
+    }
+    #cke_describe_product {
+        width: 100%;
+        margin: 0px;
     }
     .label-field {
         display: none;

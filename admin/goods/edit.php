@@ -66,6 +66,7 @@
                         <div class="form-group">
                             <label class="control-label" for="describe_product">Mô tả <strong>*</strong></label>
                             <textarea name="mo_ta" id="describe_product" rows="5" placeholder=" "><?= $mo_ta ?></textarea> <br>
+                            <script>CKEDITOR.replace('describe_product');</script>
                         </div>
                         <div class="form-group-btn">
                             <button type="submit" name="btn_update" class="btn_success">Cập nhật</button>

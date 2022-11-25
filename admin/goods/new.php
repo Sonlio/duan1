@@ -56,8 +56,10 @@
                         <div class="form-group">
                             <label class="control-label" for="describe_product">Mô tả <strong>*</strong></label>
                             <textarea name="mo_ta" id="describe_product" rows="5" placeholder=" "></textarea> <br>
-                            <label for="" class="label-field">Mô tả</label>
+                            <script>CKEDITOR.replace('describe_product');</script>
+                            <!-- <label for="" class="label-field">Mô tả</label> -->
                         </div>
+                        <input class="readonly" hidden type="text" name="so_luot_xem" value="0">
                         <div class="form-group-btn">
                             <button type="submit" name="add" class="btn_success">Lưu lại</button>
                             <button type="reset" class="btn_success_reset">Nhập lại</button>

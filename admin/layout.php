@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/css-admin/form.css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/css-admin/list.css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/css/css-admin/responsive.css">
+    <script src="<?= $CONTENT_URL ?>/js/ckeditor/ckeditor.js"></script>
     <title>QUẢN TRỊ</title>
 </head>
 <body>
