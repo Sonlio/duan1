@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     // Định nghĩa url được sử dụng trong website
     $ROOT_URL = "/duan1";
     $CONTENT_URL = "$ROOT_URL/content";

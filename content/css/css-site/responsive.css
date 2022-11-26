@@ -44,6 +44,17 @@
     .wrapper-root-type {
         text-align: center;
     }
+    .box-text-ad2 {
+        right: 10px;
+        top: 20px;
+    }
+    .box-text-ad2 > h2 {
+        font-size: 25px;
+    }
+    .box-text-ad2 > h4 {
+        font-size: 14px;
+        line-height: 24px;
+    }
 }
 
 /* MOBILE */
@@ -108,6 +119,9 @@
     .col-inner {
         text-align: center;
     }
+    .bg-box-ad2, .bg-box-ad3 {
+        height: 182px;
+    }
     .footer-heading {
         font-size: 17px;
     }
@@ -136,6 +150,9 @@
     .tools {
         margin-right: 5%;
     }
+    .bg-box-ad2, .bg-box-ad3 {
+        height: 315px;
+    }
 }
 
 /* TABLET */
@@ -154,5 +171,8 @@
     }
     .logo > a > img{
         width: 40%;
+    }
+    .bg-box-ad2, .bg-box-ad3 {
+        height: 300px;
     }
 }

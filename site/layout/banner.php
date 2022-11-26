@@ -16,6 +16,9 @@
                         <div class="slider-item">
                             <img src="<?= $CONTENT_URL ?>/images/img-site/banner3.jpg" alt="">
                         </div>
+                        <div class="slider-item">
+                            <img src="<?= $CONTENT_URL ?>/images/img-site/banner4.jpg" alt="">
+                        </div>
                     </div>
                 </div>
                 <i class="fa-solid fa-angle-right slider-next"></i>

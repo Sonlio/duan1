@@ -16,6 +16,11 @@
                     </div>
                 </div>
                 <div class="col l-6 m-12 c-12">
+                    <div class="wrapper-root-type">
+                        <a class="root-type" href="<?= $SITE_URL ?>/main-page?homepage">Trang chủ</a>
+                        <!-- <span class="divider">/</span>
+                        <span class="root-type-name"><a href="<?= $SITE_URL ?>/goods/detail.php?ma_loai=<?= $ma_loai; ?>"><?= $ten_loai; ?></a></span> -->
+                    </div>
                     <div class="info-detail">
                         <h1 class="name-product-detail"><?= $ten_sp ?></h1>
                         <div class="price-detail">
@@ -29,9 +34,9 @@
                         </div>
                         <form action="" method="POST" enctype="multipart/form-data">
                             <div class="quantity">
-                                <!-- <input type="button" value="-" class="btn-minus-quantity"> -->
+                                <input type="button" value="-" class="btn-minus-quantity is-form">
                                 <input type="number" name="quantity" class="ip-quantity" id="quantity" step="1" min="1" max="9999" value="1">
-                                <!-- <input type="button" value="+" class="btn-plus-quantity"> -->
+                                <input type="button" value="+" class="btn-plus-quantity is-form">
                             </div>
                             <a href="" class="buy-now">
                                 <strong>Mua ngay</strong>

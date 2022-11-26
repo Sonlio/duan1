@@ -20,6 +20,11 @@
         $types = loai_select_all();
         $VIEW = "goods/listed-ui-giam-gia.php";
     }
+    else if(exist_param("continue_shopping")) {
+        $products = san_pham_select_all();
+        $types = loai_select_all();
+        $VIEW = "goods/list-allshop.php";
+    }
     else{
         $products = san_pham_select_all();
         $VIEW = "goods/listed-ui.php";

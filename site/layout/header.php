@@ -27,7 +27,7 @@
                         <li><a href="<?= $href; ?>"><?= $ten_loai; ?></a></li>
                     <?php } ?>
                     <li><a href="<?= $SITE_URL ?>/main-page?contact">Liên hệ</a></li>
-                    <li><a href="#" class="icon-show-login">Đăng nhập</a></li>
+                    <li> <?php require 'login.php'; ?></li>
                 </ul>
             </div>
             <div class="logo">
@@ -70,35 +70,13 @@
                         </a>
                     </li>
                     <li>
-                        <a class="icon-user m-0 c-0 icon-show-login"><i class="fa-solid fa-user"></i></a>
+                        <a href="<?= $SITE_URL ?>/goods/cart.php" class="icon-cart"><i title="Giỏ hàng" class="fa-sharp fa-solid fa-basket-shopping"></i></a>
                     </li>
                     <li>
-                        <a href="#" class="icon-cart"><i class="fa-sharp fa-solid fa-basket-shopping"></i></a>
+                        <?php require 'login.php'; ?>
                     </li>
                 </ul>
             </div>
-        </div>
-
-        <!-- LOGIN -->
-        <div class="wrapper-login">
-            <form action="" method="post" class="main-login">                   
-                <i class="fa-solid fa-xmark icon-close-form-login"></i>
-                <h2 class="title-login">Đăng nhập</h2>
-                <div class="form-group">
-                    <label class="label-control" for="username">Tên đăng nhập *</label>
-                    <input class="form-control" type="text" placeholder="Tên đăng nhập" id="username">
-                </div>
-                <div class="form-group">
-                    <label class="label-control" for="password">Mật khẩu *</label>
-                    <input class="form-control"  type="password" placeholder="Mật khẩu" id="password">
-                </div>
-                <div class="form-btn">
-                    <input class="btn-submit" type="submit" value="Đăng nhập">
-                    <input class="ip-remember" type="checkbox" id="remember"> <label class="label-remember" for="remember">Ghi nhớ mật khẩu</label>
-                </div>
-                <p class="lost-pass"><a href="#">Quên mật khẩu?</a></p>
-                <p class="register"><a href="#">Đăng ký</a></p>
-            </form>
         </div>
     </div>
 </body>
