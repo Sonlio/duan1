@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= $SITE_URL ?>/goods/cart.php" class="icon-cart"><i title="Giỏ hàng" class="fa-sharp fa-solid fa-basket-shopping"></i></a>
+                        <a href="<?= $SITE_URL ?>/goods/cart.php?btn_show_cart" class="icon-cart"><i title="Giỏ hàng" class="fa-sharp fa-solid fa-basket-shopping"></i></a>
                     </li>
                     <li>
                         <?php require 'login.php'; ?>

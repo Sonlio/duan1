@@ -16,11 +16,11 @@
                     </div>
                 </div>
                 <div class="col l-6 m-12 c-12">
-                    <div class="wrapper-root-type">
+                    <!-- <div class="wrapper-root-type">
                         <a class="root-type" href="<?= $SITE_URL ?>/main-page?homepage">Trang chủ</a>
-                        <!-- <span class="divider">/</span>
-                        <span class="root-type-name"><a href="<?= $SITE_URL ?>/goods/detail.php?ma_loai=<?= $ma_loai; ?>"><?= $ten_loai; ?></a></span> -->
-                    </div>
+                        <span class="divider">/</span>
+                        <span class="root-type-name"><a href="<?= $SITE_URL ?>/goods/detail.php?ma_loai=<?= $ma_loai; ?>"><?= $ten_loai; ?></a></span>
+                    </div> -->
                     <div class="info-detail">
                         <h1 class="name-product-detail"><?= $ten_sp ?></h1>
                         <div class="price-detail">

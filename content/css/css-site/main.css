@@ -1239,13 +1239,14 @@ input.btn_comment_reset:hover{
 /* CART */
 /* show-cart */
 .show-cart {
-    padding: 50px 10px;
+    padding: 30px 10px;
 }
 
 .tb-form-show-cart {
     width: 100%;
     padding-right: 30px;
     border-right: 1px solid #ececec;
+    margin-bottom: 30px;
 }
 
 .tb-form-show-cart tr, th, td {
@@ -1258,10 +1259,20 @@ input.btn_comment_reset:hover{
     padding-bottom: 4px;
 }
 
-.tb-form-show-cart tr.tr-product > td {
+.tb-form-show-cart tr.tr-product > td, .tb-form-show-cart tr.tr-product > td > a{
+    font-size: 18px;
+}
+
+.tb-form-show-cart tr.tr-product > td{
     border-bottom: 1px solid #ececec;
+}
+
+.name-product > a {
     color: #666;
-    font-size: 16px;
+}
+
+.tb-form-show-cart tr.tr-product > .name-product > a:hover {
+    color: #e2ba48;
 }
 
 .tb-form-show-cart thead tr th:first-child, .tb-form-show-cart tbody tr td:first-child  {
@@ -1273,20 +1284,31 @@ input.btn_comment_reset:hover{
     padding-right: 0px;
 }
 
+.remove-product > a > i:hover {
+    color: #000;
+    font-weight: bold;
+}
+
 .img-product {
     width: 90px;
+    padding: 20px 0px;
 }
 
 .img-product img {
     width: 100%;
 }
 
-.img-product {
-    padding: 20px 0px;
-}
-
 .total-product {
     text-align: right;
+}
+
+.amount-product-mobile, .price-product-mobile {
+    font-size: 14px;
+}
+
+.price-product-mobile, .price-product, .total-product{
+    font-weight: bold;
+    color: #000;
 }
 
 .td-continue-shopping {
@@ -1358,6 +1380,144 @@ input.btn_comment_reset:hover{
 }
 
 .button-checkout:hover {
+    box-shadow: inset 0 0 0 100px rgb(0 0 0 / 20%);
+    transition: transform .5s, border .5s, background .5s, box-shadow .5s, opacity .5s, color .5s;
+}
+
+/* form cart */
+.form-cart {
+    padding: 30px 10px;
+}
+
+.user-have-account, .user-have-account > a{
+    margin: 0;
+    color: #000;
+    padding-bottom: 15px;
+}
+
+.user-have-account > a:hover, .new-account:hover{
+    color: #e2ba48;
+}
+
+.form-checkout h3 {
+    font-size: 17px;
+    text-transform: uppercase;
+    margin: 0px 0px 20px 0px;
+}
+
+.wrapper-custommer-detail {
+    padding: 0px 30px 0px 0px;
+}
+
+.customer-detail {
+    border-top: 2px solid #ddd;
+    padding-top: 15px;
+}
+
+.form-checkout-group {
+    margin-bottom: 20px;
+}
+
+.form-checkout-group > label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+    font-weight: bold;
+}
+
+.form-checkout-group > input {
+    width: 99%;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+    height: 35px;
+    text-indent: 7px;
+    outline: none;
+    font-size: 15px;
+}
+
+.form-checkout-group > input:focus {
+    box-shadow: 0 0 5px #ccc;
+}
+
+.new-account {
+    color: #000;
+    margin-bottom: 30px;
+    display: block;
+    width: 138px;
+    display: block;
+}
+
+.wrapper-your-bill {
+    padding: 15px 30px;
+    border: 2px solid #000;
+}
+
+.tb-your-bill {
+    width: 100%;
+}
+
+.tb-your-bill thead tr th{
+    border-bottom: 3px solid #ececec;
+    padding: 10px 0px;
+    text-transform: uppercase;
+}
+
+.tb-your-bill tbody tr td{
+    padding: 15px 0px;
+    border-bottom: 1px solid #ececec;
+    color: #666;
+    font-size: 15px;
+}
+
+.cart-item .product-name-your-bill {
+    font-size: 18px;
+}
+
+.tb-your-bill tfoot tr .product-total-your-bill{
+    font-size: 15px;
+}
+
+.tb-your-bill tbody tr .product-total-your-bill, .product-total-your-bill {
+    font-weight: bold;
+    color: #000;
+}
+
+.product-quantity-your-bill {
+    font-weight: bold;
+    color: #000;
+    font-size: 13px;
+}
+
+.cart-subtotal > th, .cart-subtotal > td {
+    padding: 10px 0px;
+    border-bottom: 1px solid #ececec;
+}
+
+.order-total > th, .order-total > td {
+    border-bottom: 3px solid #ececec;
+    padding: 10px 0px;
+}
+
+.product-total-your-bill {
+    text-align: right;
+}
+
+.btn-order {
+    margin-top: 30px;
+}
+
+.btn-order > button {
+    background-color: #916841;
+    padding: 9px 14px;
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-order > button:hover {
     box-shadow: inset 0 0 0 100px rgb(0 0 0 / 20%);
     transition: transform .5s, border .5s, background .5s, box-shadow .5s, opacity .5s, color .5s;
 }

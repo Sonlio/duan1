@@ -55,6 +55,12 @@
         font-size: 14px;
         line-height: 24px;
     }
+    .amount-show-cart, .tb-form-show-cart {
+        padding: 0px;
+    }
+    .wrapper-custommer-detail {
+        padding: 0;
+    }
 }
 
 /* MOBILE */
@@ -97,6 +103,9 @@
     }
     .price-detail > del, .price-detail > p {
         font-size: 22px;
+    }
+    .amount-product {
+        text-align: center;
     }
     .middle::before {
         position: absolute;

@@ -18,12 +18,30 @@
                                 </thead>
                                 <tbody>
                                     <tr class="tr-product">
-                                        <td class="remove-product"><i class="fa-regular fa-circle-xmark"></i></td>
+                                        <td class="remove-product"><a href=""><i class="fa-regular fa-circle-xmark"></i></a></td>
                                         <td class="img-product"><img src="<?= $CONTENT_URL ?>/images/img-admin/img-products/dhn1.png" alt=""></td>
-                                        <td class="name-product">Đồng hồ nam 1</td>
-                                        <td class="price-product"> 20,000,000 <span style="text-decoration: underline;">đ</span></td>
+                                        <td class="name-product"><a href="<?= $SITE_URL?>/goods/detail.php?ma_sp=22">Đồng hồ nam 1</a>
+                                            <p class="l-0 m-0">
+                                                <span class="amount-product-mobile">1 x</span>
+                                                <span class="price-product-mobile">10,000,000 <span style="text-decoration: underline;">đ</span></span>
+                                            </p>
+                                        </td>
+                                        <td class="price-product c-0"> 20,000,000 <span style="text-decoration: underline;">đ</span></td>
                                         <td class="amount-product">2</td>
-                                        <td class="total-product">40,000,000 <span style="text-decoration: underline;">đ</span></td>
+                                        <td class="total-product c-0">40,000,000 <span style="text-decoration: underline;">đ</span></td>
+                                    </tr>
+                                    <tr class="tr-product">
+                                        <td class="remove-product"><a href=""><i class="fa-regular fa-circle-xmark"></i></a></td>
+                                        <td class="img-product"><img src="<?= $CONTENT_URL ?>/images/img-admin/img-products/dhn1.png" alt=""></td>
+                                        <td class="name-product"><a href="<?= $SITE_URL?>/goods/detail.php?ma_sp=22">Đồng hồ nam 1</a>
+                                            <p class="l-0 m-0">
+                                                <span class="amount-product-mobile">1 x</span>
+                                                <span class="price-product-mobile">10,000,000 <span style="text-decoration: underline;">đ</span></span>
+                                            </p>
+                                        </td>
+                                        <td class="price-product c-0"> 20,000,000 <span style="text-decoration: underline;">đ</span></td>
+                                        <td class="amount-product">2</td>
+                                        <td class="total-product c-0">40,000,000 <span style="text-decoration: underline;">đ</span></td>
                                     </tr>
                                     <tr>
                                         <td class="td-continue-shopping" colspan="6">
@@ -60,7 +78,7 @@
                             </tbody>
                         </table>
                         <div class="checkout">
-                            <a href="" class="button-checkout">TIẾN HÀNH THANH TOÁN</a>
+                            <a href="<?= $SITE_URL ?>/goods/cart.php?btn_form_cart" class="button-checkout">TIẾN HÀNH THANH TOÁN</a>
                         </div>
                     </div>
                 </div>

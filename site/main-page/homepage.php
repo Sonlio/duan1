@@ -82,7 +82,7 @@
         <!-- SẢN PHẨM ĐƯỢC GIẢM GIÁ -->
         <div class="gap-element" style="padding-top: 10px;"></div>
         <div class="col l-12">
-            <h2 class="title-category">Sản phẩm được giảm giá</h2>
+            <h2 class="title-category">Sản phẩm giảm giá</h2>
         </div>
         <div class="row no-gutters container-content">
             <?php
