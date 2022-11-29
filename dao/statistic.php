@@ -46,7 +46,7 @@
     }
 
     // THỐNG KÊ SỐ LƯỢNG KHÁCH HÀNG
-    function thong_ke_khach_hang(){
+    function thong_ke_khach_hang_all(){
         $sql = "SELECT COUNT(*) so_luong FROM khach_hang";
         return query_all($sql);
     }

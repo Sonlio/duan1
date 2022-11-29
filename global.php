@@ -67,6 +67,6 @@
             }
         }
         $_SESSION['request_uri'] = $_SERVER["REQUEST_URI"];
-        header("location: $SITE_URL/tai-khoan/dang-nhap.php");
+        header("location: $SITE_URL/account/login.php");
     }
 ?>

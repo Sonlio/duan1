@@ -43,7 +43,7 @@
                                             <td class="hide"><?= $dia_chi; ?></td>
                                             <td class="hide"><?= $sdt; ?></td>
                                             <td class="hide"><?= $email; ?></td>
-                                            <td><?= $tong_tien; ?> đ</td>
+                                            <td><?= number_format($tong_tien, 0, '.',','); ?> đ</td>
                                             <td><a title="Chi tiết" href="index.php?ma_hd=<?= $ma_hd; ?>"><i class="fa-solid fa-circle-info"></i></a></td>
                                         </tr>
                                         <tr class="tr-child">

@@ -32,16 +32,16 @@
                             </del>
                             <p><?= number_format($don_gia - ($don_gia * ($giam_gia / 100)), 0, ',', '.'); ?> đ</p>
                         </div>
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="cart.php?action=add" method="POST" enctype="multipart/form-data">
                             <div class="quantity">
                                 <input type="button" value="-" class="btn-minus-quantity is-form">
-                                <input type="number" name="quantity" class="ip-quantity" id="quantity" step="1" min="1" max="9999" value="1">
+                                <input type="number" name="quantity[<?= $ma_sp ?>]" class="ip-quantity" id="quantity" step="1" min="1" max="9999" value="1">
                                 <input type="button" value="+" class="btn-plus-quantity is-form">
                             </div>
-                            <a href="" class="buy-now">
+                            <button class="buy-now">
                                 <strong>Mua ngay</strong>
                                 <span>Gọi điện xác nhận và giao hàng tận nơi</span>
-                            </a>
+                            </button>
                         </form>
                         <div class="box-detail">
                             <div class="icon-box-detail"><img src="<?= $CONTENT_URL ?>/images/img-site/icon-freeship-detail.jpg" alt=""></div>

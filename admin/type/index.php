@@ -2,7 +2,7 @@
     require '../../global.php';
     require '../../dao/type.php';
 
-    // check_login();
+    check_login();
 
     extract($_REQUEST);
 

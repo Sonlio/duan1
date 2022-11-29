@@ -1016,6 +1016,8 @@ a {
     margin: 20px 0px;
     max-width: 335px;
     width: 100%;
+    border: none;
+    cursor: pointer;
 }
 
 .buy-now > span {
@@ -1284,6 +1286,10 @@ input.btn_comment_reset:hover{
     padding-right: 0px;
 }
 
+.remove-product > a {
+    color: #666;
+}
+
 .remove-product > a > i:hover {
     color: #000;
     font-weight: bold;
@@ -1313,10 +1319,11 @@ input.btn_comment_reset:hover{
 
 .td-continue-shopping {
     border-bottom: none;
+    padding: 25px 0px;
 }
 
 .continue-shopping {
-    margin-top: 25px;
+    display: flex;
 }
 
 .button-continue-shopping {
@@ -1333,8 +1340,26 @@ input.btn_comment_reset:hover{
     transition: transform .5s, border .5s, background .5s, box-shadow .5s, opacity .5s, color .5s;
 }
 
+.update-shopping {
+    padding: 7px 20px;
+    background: #000;
+    opacity: .6;
+    color: #fff;
+    border: none;
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
 .amount-show-cart {
     padding-left: 30px;
+}
+
+.amount-product > .quantity > .ip-quantity, 
+.amount-product > .quantity > .btn-plus-quantity, 
+.amount-product > .quantity > .btn-minus-quantity {
+    padding: 7px 6px;
 }
 
 .tb1 {
@@ -1381,6 +1406,33 @@ input.btn_comment_reset:hover{
 
 .button-checkout:hover {
     box-shadow: inset 0 0 0 100px rgb(0 0 0 / 20%);
+    transition: transform .5s, border .5s, background .5s, box-shadow .5s, opacity .5s, color .5s;
+}
+
+.cart-empty {
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.mes-cart-empty {
+    color: #353535;
+    font-size: 16px;
+    margin: 0px 0px 50px 0px;
+}
+
+.back-shop {
+    padding: 9px 13px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #000;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.back-shop:hover {
+    background-color: #000;
+    color: #fff;
     transition: transform .5s, border .5s, background .5s, box-shadow .5s, opacity .5s, color .5s;
 }
 

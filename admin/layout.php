@@ -20,13 +20,16 @@
                 <a href="<?= $ADMIN_URL ?>/main-page"><img src="<?= $CONTENT_URL ?>/images/img-admin/logo.png" alt="Logo"></a>
             </div>
             <div class="sidebar-profile">
-                <div class="profile-pic">
-                    <img src="<?= $CONTENT_URL ?>/images/img-admin/01bf78dd4b72bc2ce563.jpg" alt="">
-                </div>
-                <div class="profile-info">
-                    <span>Xin chào</span>
-                    <h3>sonlvpd05507</h3>
-                </div>
+                <?php
+                    if(isset($_SESSION['user'])) { ?>
+                        <div class="profile-pic">
+                            <img src="<?= $CONTENT_URL ?>/images/img-admin/img-users/<?= $_SESSION['user']['hinh'] ?>" alt="">
+                        </div>
+                        <div class="profile-info">
+                            <span>Xin chào</span>
+                            <h3><?= $_SESSION['user']['ten_kh'] ?></h3>
+                        </div>
+                <?php } ?>
             </div>
             <!-- SIDEBAR MENU -->
             <div class="sidebar-menu">
@@ -89,14 +92,14 @@
                         <!-- INFO USER -->
                         <div class="nav-menu-info-link">
                             <div class="info-pic">
-                                <img src="<?= $CONTENT_URL ?>/images/img-admin/01bf78dd4b72bc2ce563.jpg" alt="">
+                                <img src="<?= $CONTENT_URL ?>/images/img-admin/img-users/<?= $_SESSION['user']['hinh'] ?>" alt="">
                             </div>
                             <div class="info-name">
-                                <span>sonlvpd05507</span>
+                                <span><?= $_SESSION['user']['ten_kh'] ?></span>
                             </div>
                             <i class="fa-solid fa-caret-down"></i>
                             <ul class="nav-menu-log">
-                                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                                <li><a href="<?= $SITE_URL ?>/account/login.php?btn_logoff"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
                             </ul>
                         </div>
                     </div>

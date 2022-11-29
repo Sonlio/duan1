@@ -1,8 +1,48 @@
+<?php
+     if(!empty($_SESSION['cart'])) {
+        $sql = "SELECT * FROM san_pham WHERE ma_sp IN(".implode(",", array_keys($_SESSION['cart'])).")";
+        $products = query_all($sql);
+    }
+    if(isset($_GET['order'])) {
+       if(isset($_POST['order_click'])) {
+            $sql = "SELECT * FROM san_pham WHERE ma_sp IN(".implode(",", array_keys($_POST['quantity'])).")";
+            $products = query_all($sql);
+            $total = 0;
+            foreach($products as $product) {
+                $order_products[$product['ma_sp']] = $product;
+                $don_gia = $product['don_gia'] - ($product['don_gia'] * ($product['giam_gia'] / 100));
+                $so_luong = $_POST['quantity'][$product['ma_sp']];                          
+                $total += $don_gia * $so_luong;
+            }
+            // Thêm đơn hàng vào bảng hóa đơn
+            $insertBill = "INSERT INTO hoa_don (ma_hd, ma_kh, ten_kh, dia_chi, sdt, email, tong_tien, ngay_mua) VALUES (NULL, '".$_POST['ma_kh']."', '".$_POST['ten_kh']."', '".$_POST['dia_chi']."', '".$_POST['sdt']."', '".$_POST['email']."', '".$total."', current_timestamp())";
+            $conn = connection();
+            $conn->exec($insertBill);
+            $orderId = $conn ->lastInsertId();
+
+            $insert_string = "";
+            foreach($products as $key => $product) {
+                $so_luong = $_POST['quantity'][$product['ma_sp']];
+                $thanh_tien = ($product['don_gia'] - ($product['don_gia'] * ($product['giam_gia'] / 100))) * $so_luong;                          
+                $insert_string .= "(NULL, '".$product['ten_sp']."', '".$product['don_gia']."', '".$product['giam_gia']."', '".$so_luong."', '".$don_gia * $so_luong."', '".$product['ma_sp']."', '$orderId')"; 
+                if($key != count($products) - 1) {
+                    $insert_string .= ",";
+                }
+            }
+            // Thêm mới vào bảng chi tiết hóa đơn
+            $insertBillDetail = "INSERT INTO chi_tiet_hoa_don (ma_cthd, ten_sp, don_gia, giam_gia, so_luong, thanh_tien, ma_sp, ma_hd) VALUES $insert_string";
+            $conn->exec($insertBillDetail);
+            unset($_SESSION['cart']);
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <body>
      <div class="form-cart">
         <div class="grid wide">
+        <?php if(isset($_SESSION['cart'])) { ?>
             <div class="row no-gutters">
                 <div class="col l-12 m-12 c-12">
                     <?php
@@ -11,7 +51,7 @@
                     <?php } ?>
                 </div>
             </div>
-            <form action="" class="form-checkout" method="post">
+            <form action="cart.php?order=submit" class="form-checkout" method="post">
                 <div class="row no-gutters">
                     <div class="col l-7 m-12 c-12">
                         <div class="wrapper-custommer-detail">
@@ -19,6 +59,7 @@
                                 <h3>Thông tin thanh toán</h3>
                                 <?php if(isset($_SESSION['user'])) { ?>                         
                                     <div class="form-checkout-group">
+                                        <input type="text" hidden name="ma_kh" id="ten_kh" value="<?= $_SESSION['user']['ma_kh'] ?>">
                                         <label for="ten_kh">Tên <strong style="color: red;">*</strong></label>
                                         <input type="text" name="ten_kh" id="ten_kh" value="<?= $_SESSION['user']['ten_kh'] ?>">
                                     </div>
@@ -34,8 +75,10 @@
                                         <label for="email">Email <strong style="color: red;">*</strong></label>
                                         <input type="email" name="email" id="email" value="<?= $_SESSION['user']['email'] ?>">
                                     </div>
+
                                 <?php } else { ?>
                                     <div class="form-checkout-group">
+                                        <input type="text" hidden name="ma_kh" value="khách chưa đăng nhập">
                                         <label for="ten_kh">Tên <strong style="color: red;">*</strong></label>
                                         <input type="text" name="ten_kh" id="ten_kh">
                                     </div>
@@ -68,32 +111,46 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="cart-item">
-                                            <td class="product-name-your-bill">Đồng hồ nam abc 
-                                                <strong class="product-quantity-your-bill">× 1</strong>
-                                            </td>
-                                            <td class="product-total-your-bill">40,000,000 <span style="text-decoration: underline;">đ</span></td>
-                                        </tr>
+                                        <?php                                         
+                                            $tong = 0;
+                                            foreach ($products as $product) { 
+                                                $don_gia = $product['don_gia'] - ($product['don_gia'] * ($product['giam_gia'] / 100));
+                                                $so_luong = $_SESSION['cart'][$product['ma_sp']]; ?>                             
+                                                <tr class="cart-item">
+                                                    <td class="product-name-your-bill"> <?= $product['ten_sp'] ?> 
+                                                        <strong class="product-quantity-your-bill">× <?= $so_luong; ?></strong>
+                                                        <input type="text" hidden name="quantity[<?= $product['ma_sp']; ?>]" value="<?= $so_luong; ?>" >
+                                                    </td>
+                                                    <td class="product-total-your-bill">
+                                                        <?= number_format($don_gia * $so_luong, 0, '.', ',')?> <span style="text-decoration: underline;">đ</span>
+                                                    </td>
+                                                </tr>
+                                            <?php 
+                                            $tong += $don_gia * $so_luong;
+                                        } ?>
                                     </tbody>
                                     <tfoot>
                                         <tr class="cart-subtotal">
                                             <th>Tạm tính</th>
-                                            <td class="product-total-your-bill">20,000,000 <span style="text-decoration: underline;">đ</span></td>
+                                            <td class="product-total-your-bill"><?= number_format($tong, 0, '.', ',') ?><span style="text-decoration: underline;">đ</span></td>
                                         </tr>
                                         <tr class="order-total">
                                             <th>Tổng</th>
-                                            <td class="product-total-your-bill">20,000,000 <span style="text-decoration: underline;">đ</span></td>
+                                            <td class="product-total-your-bill"><?= number_format($tong, 0, '.', ',') ?><span style="text-decoration: underline;">đ</span></td>
                                         </tr>
                                     </tfoot>
                                 </table>
                                 <div class="btn-order">
-                                    <button type="submit" name="order">Đặt hàng</button>
+                                    <button type="submit" name="order_click">Đặt hàng</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
+            <?php } else { ?>
+                <p>Đặt hàng thành công</p>
+           <?php } ?>
         </div>
      </div>
 </body>

@@ -27,7 +27,7 @@
                         <li><a href="<?= $href; ?>"><?= $ten_loai; ?></a></li>
                     <?php } ?>
                     <li><a href="<?= $SITE_URL ?>/main-page?contact">Liên hệ</a></li>
-                    <li> <?php require 'login.php'; ?></li>
+                    <li> <?php require 'login-mobile.php'; ?></li>
                 </ul>
             </div>
             <div class="logo">

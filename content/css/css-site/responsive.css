@@ -61,6 +61,21 @@
     .wrapper-custommer-detail {
         padding: 0;
     }
+    .my-account {
+        padding: 15px 10px 15px 20px;
+        color: #666666d9;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .link-my-account {
+        top: 60px;
+        min-width: 145px;
+    }
+    .link-my-account > li > a {
+        font-size: 10px;
+        padding: 7px 10px;
+    }
 }
 
 /* MOBILE */
@@ -106,6 +121,17 @@
     }
     .amount-product {
         text-align: center;
+    }
+    .amount-product > .quantity {
+        justify-content: center;
+    }
+    .continue-shopping, .update-shopping{
+        display: block;
+    }
+    .update-shopping {
+        margin-top: 20px;
+        margin-left: 0;
+        padding: 8px 42px;
     }
     .middle::before {
         position: absolute;

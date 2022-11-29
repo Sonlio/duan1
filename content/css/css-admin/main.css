@@ -34,6 +34,7 @@ body {
 
 .profile-pic img {
     width: 90%;
+    height: 63px;
     border-radius: 50%;
     padding: 4px;
     background-color: white;
@@ -257,12 +258,13 @@ ul.nav-child-menu > li > a, ul.nav-child-menu-responsive > li > a {
 }
 
 .info-pic {
-    width: 40%;
+    width: 30%;
     text-align: center;
 }
 
 .info-pic img{
-    width: 65%;
+    width: 56%;
+    height: 30px;
     border-radius: 50%;
 }
 

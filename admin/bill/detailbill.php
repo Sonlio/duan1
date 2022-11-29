@@ -43,10 +43,10 @@
                                             <td class="hide"><?= $ma_cthd; ?></td>
                                             <td class="hide"><?= $ma_sp; ?></td>
                                             <td><?= $ten_sp; ?></td>
-                                            <td class="hide"><?= $don_gia; ?> đ</td>
+                                            <td class="hide"><?= number_format($don_gia, 0, '.', ','); ?> đ</td>
                                             <td class="hide"><?= $giam_gia; ?>%</td>
                                             <td class="hide"><?= $so_luong; ?></td>
-                                            <td><?= $thanh_tien; ?> đ</td>
+                                            <td><?= number_format($thanh_tien, 0, '.', ','); ?> đ</td>
                                             <td class="hide"><?= $ma_hd ?></td>
                                             <td><a title="Xoá" id="delete" href="index.php?btn_delete&ma_cthd=<?= $ma_cthd ?>&ma_hd=<?= $ma_hd ?>"><i class="fa-solid fa-trash"></i></a></td>
                                         </tr>
@@ -63,7 +63,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="span-title">Đơn giá:</span>
-                                                        <span class="span-data"><?= $don_gia; ?> đ</span>
+                                                        <span class="span-data"><?= number_format($don_gia, 0, '.', ','); ?> đ</span>
                                                     </li>
                                                     <li>
                                                         <span class="span-title">Giảm giá:</span>
