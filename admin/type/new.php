@@ -12,7 +12,7 @@
                     <?php 
                         echo "<h5 class='notifications'>$MESSAGE</h5>";
                     ?>
-                    <form action="index.php" method="POST" enctype="multipart/form-data">
+                    <form id="form" action="index.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label class="control-label" for="id_type">Mã loại</label>
                             <input class="readonly form-control" type="text" name="ma_loai" id="id_type" readonly value="Auto number">
@@ -34,3 +34,21 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form").validate({
+            rules: {
+                'ten_loai': {
+                    required: true,
+                }
+            },
+
+            messages: {
+                'ten_loai': {
+                    required: "</br>Tên loại không được để trống!"
+                } 
+            }
+        });
+    });
+</script>

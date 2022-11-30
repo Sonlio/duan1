@@ -71,6 +71,9 @@
     #columnchart_3d {
         width: 720px;
     }
+    label.error{
+        left: 24%;
+    }
 }
 
 /* MOBILE */
@@ -140,6 +143,10 @@
     }
     td.td-child > ul > li > .span-title {
         width: 36%;
+    }
+    label.error {
+        bottom: -4px;
+        left: 0px;
     }
     /* FOOTER */
     .pull-right p {

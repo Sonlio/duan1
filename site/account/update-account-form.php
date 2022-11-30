@@ -3,7 +3,7 @@
 <body>
     <div class="grid wide">
         <div class="wrapper-login">
-            <form action="update-account.php" method="post" class="main-login" enctype="multipart/form-data">
+            <form id="form-update" action="update-account.php" method="post" class="main-login" enctype="multipart/form-data">
                 <h2 class="title-login">Cập nhật tài khoản</h2>
                 <?php echo "<h5>$MESSAGE</h5>"; ?>
                 <div class="form-group">
@@ -41,3 +41,49 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form-update").validate({
+            rules: {
+                "ten_kh": {
+                    required: true
+                },
+                "sdt": {
+                    required: true,
+                    number: true,
+                },
+                "dia_chi": {
+                    required: true,
+                },
+                "email": {
+                    required: true,
+                    email:true
+                },
+                "up_hinh": {
+                    required: true,
+                },
+            },
+
+            messages: {
+                "ten_kh": {
+                    required: "</br>Họ tên không được để trống!"
+                },
+                "sdt": {
+                    required: "</br>Số điện thoại không được để trống!",
+                    number: "</br>Số điện thoại phải là số!"
+                }, 
+                "dia_chi": {
+                    required: "</br>Địa chỉ không được để trống!",
+                }, 
+                "email": {
+                    required: "</br>Email không được để trống!",
+                    email: "</br>Email không đúng định dạng!"
+                }, 
+                "up_hinh": {
+                    required: "</br>Hình ảnh không được để trống!",
+                }
+            }
+        });
+    });
+</script>

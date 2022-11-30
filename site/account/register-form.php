@@ -3,7 +3,7 @@
 <body>
     <div class="grid wide">
         <div class="wrapper-login">
-            <form action="register.php" method="post" class="main-login" enctype="multipart/form-data">
+            <form id="form-register" action="register.php" method="post" class="main-login" enctype="multipart/form-data">
                 <h2 class="title-login">Đăng ký</h2>
                 <?php echo "<h5>$MESSAGE</h5>"; ?>
                 <div class="form-group">
@@ -47,3 +47,71 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form-register").validate({
+            rules: {
+                "ma_kh": {
+                    required: true
+                },
+                "mat_khau": {
+                    required: true,
+                    minlength: 6
+                },
+                "mat_khau2": {
+                    required: true,
+                    equalTo: "#password",
+                },
+                "ten_kh": {
+                    required: true
+                },
+                "sdt": {
+                    required: true,
+                    number: true
+                },
+                "dia_chi": {
+                    required: true
+                },
+                "email": {
+                    required: true,
+                    email:true
+                },
+                "up_hinh": {
+                    required: true,
+                },
+            },
+
+            messages: {
+                "ma_kh": {
+                    required: "</br>Tên đăng nhập không dược để trống!"
+                },
+                "ten_kh": {
+                    required: "</br>Họ tên không được để trống!"
+                },
+                "mat_khau": {
+                    required: "</br>Mật khẩu không được để trống!",
+                    minlength: "</br>Mật khẩu ít nhất 6 kí tự!"
+                },
+                "mat_khau2": {
+                    required: "</br>Xác nhận mật khẩu không được để trống!",
+                    equalTo: "</br>Mật khẩu không trùng khớp"
+                },
+                "sdt": {
+                    required: "</br>Số điện thoại không được để trống!",
+                    number: "</br>Số điện thoại phải là số!"
+                }, 
+                "dia_chi": {
+                    required: "</br>Địa chỉ không được để trống!",
+                }, 
+                "email": {
+                    required: "</br>Email không được để trống!",
+                    email: "</br>Email không đúng định dạng!"
+                }, 
+                "up_hinh": {
+                    required: "</br>Hình ảnh không được để trống!",
+                }
+            }
+        });
+    });
+</script>

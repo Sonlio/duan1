@@ -3,7 +3,7 @@
 <body>
     <div class="grid wide">
         <div class="wrapper-login">
-            <form action="forgot-pass.php" method="post" class="main-login">
+            <form id="form-forgot" action="forgot-pass.php" method="post" class="main-login">
                 <h2 class="title-login">Quên mật khẩu</h2>
                 <?php echo "<h5>$MESSAGE</h5>"; ?>
                 <div class="form-group">
@@ -22,3 +22,29 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form-forgot").validate({
+            rules: {
+                "ma_kh": {
+                    required: true
+                },
+                "email": {
+                    required: true,
+                    email:true
+                }
+            },
+
+            messages: {
+                "ma_kh": {
+                    required: "</br>Tên đăng nhập không dược để trống!"
+                },
+                "email": {
+                    required: "</br>Email không được để trống!",
+                    email: "</br>Email không đúng định dạng!"
+                }
+            }
+        });
+    });
+</script>

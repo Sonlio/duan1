@@ -9,7 +9,7 @@
                 </div>
                 <div class="content-panel">
                     <br>
-                    <form action="index.php" method="POST" enctype="multipart/form-data">
+                    <form id="form" action="index.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label class="control-label" for="id_product">Mã sản phẩm</label>
                             <input class="readonly form-control" type="text" name="ma_sp" id="id_product" readonly value="Auto number">
@@ -72,3 +72,49 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form").validate({
+            rules: {
+                "ten_sp": {
+                    required: true
+                },
+                "don_gia": {
+                    required: true,
+                    number: true,
+                    digits: true
+                },
+                "giam_gia": {
+                    required: true,
+                    number: true,
+                    // digits: true,
+                    max: 100
+                },
+                "hinh": {
+                    required: true,
+                },
+            },
+
+            messages: {
+                "ten_sp": {
+                    required: "</br>Tên sản phẩm không dược để trống!"
+                },
+                "don_gia": {
+                    required: "</br>Đơn giá không được để trống!",
+                    number: "</br>Đơn giá phải là số!",
+                    digits: "</br>Đơn giá phải là số dương!"
+                },
+                "giam_gia": {
+                    required: "</br>Giảm giá không được để trống!",
+                    number: "</br>Giảm giá phải là số!",
+                    // digits: "</br>Giảm giá phải là số dương!"
+                    max: "</br>Bạn phải nhập từ 0 - 100 (%)!",
+                },
+                "hinh": {
+                    required: "</br>Hình ảnh không được để trống!"
+                }
+            }
+        });
+    });
+</script>

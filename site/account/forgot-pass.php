@@ -13,7 +13,7 @@ if(exist_param("btn_forgot")){
         }
         else{
             $MESSAGE = "Mật khẩu của bạn là: " . $user['mat_khau'];
-            $VIEW="account/login-fom.php";
+            $VIEW="account/login-form.php";
             global $ma_kh, $mat_khau;
         }
     }

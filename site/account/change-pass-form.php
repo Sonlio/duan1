@@ -3,7 +3,7 @@
 <body>
     <div class="grid wide">
         <div class="wrapper-login">
-            <form action="change-pass.php" method="post" class="main-login">
+            <form id="form-change" action="change-pass.php" method="post" class="main-login">
                 <h2 class="title-login">Đổi mật khẩu</h2>
                 <?php echo "<h5>$MESSAGE</h5>"; ?>
                 <div class="form-group">
@@ -30,3 +30,43 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form-change").validate({
+            rules: {
+                "ma_kh": {
+                    required: true
+                },
+                "mat_khau": {
+                    required: true,
+                },
+                "mat_khau2": {
+                    required: true,
+                    minlength: 6
+                },
+                "mat_khau3": {
+                    required: true,
+                    equalTo: "#pass-new",
+                }
+            },
+
+            messages: {
+                "ma_kh": {
+                    required: "</br>Tên đăng nhập không dược để trống!"
+                },
+                "mat_khau": {
+                    required: "</br>Mật khẩu cũ không được để trống!"
+                },
+                "mat_khau2": {
+                    required: "</br>Mật khẩu mới không được để trống!",
+                    minlength: "</br>Mật khẩu mới ít nhất 6 kí tự!"
+                },
+                "mat_khau3": {
+                    required: "</br>Xác nhận mật khẩu mới không được để trống!",
+                    equalTo: "</br>Xác nhận mật khẩu mới không trùng khớp",
+                }
+            }
+        });
+    });
+</script>

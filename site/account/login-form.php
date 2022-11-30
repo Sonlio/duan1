@@ -3,7 +3,7 @@
 <body>
     <div class="grid wide">
         <div class="wrapper-login">
-            <form action="login.php" method="post" class="main-login">
+            <form id="form-login-main" action="login.php" method="post" class="main-login">
                 <h2 class="title-login">Đăng nhập</h2>
                 <?php echo "<h5>$MESSAGE</h5>"; ?>
                 <div class="form-group">
@@ -25,3 +25,28 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form-login-main").validate({
+            rules: {
+                "ma_kh": {
+                    required: true
+                },
+                "mat_khau": {
+                    required: true,
+                }
+            },
+
+            messages: {
+                "ma_kh": {
+                    required: "</br>Tên đăng nhập không dược để trống!"
+                },
+                "mat_khau": {
+                    required: "</br>Mật khẩu không được để trống!",
+                    minlength: "</br>Mật khẩu ít nhất 6 kí tự!"
+                }
+            }
+        });
+    });
+</script>
