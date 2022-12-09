@@ -39,7 +39,7 @@
                     <h3>Tổng quan</h3>
                     <!-- PARENTS MENU -->
                     <ul class="nav-side-menu">
-                        <li><a href="<?= $ADMIN_URL ?>/main-page" class="link active"><i class="fa-solid fa-house-user"></i>Trang chủ</a></li>
+                        <li><a href="<?= $ADMIN_URL ?>/main-page" class="link"><i class="fa-solid fa-house-user"></i>Trang chủ</a></li>
                         <li>
                             <a class="link"><label for="dropdown-product"><i class="fa-solid fa-bars"></i>Sản phẩm<i class="fa-solid fa-caret-down"></i></label></a>
                             <input hidden type="checkbox" id="dropdown-product" class="dropdown-product">

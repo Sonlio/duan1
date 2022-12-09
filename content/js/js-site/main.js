@@ -34,15 +34,3 @@ window.addEventListener("load", function() {
         })
     })
 });
-
-// ANIMATION
-// window.addEventListener("load", function() {
-//     const colProducts = document.querySelectorAll('#col-product');
-//     window.addEventListener('scroll', () => {
-//         if (window.scrollY > 50) {
-//             [...colProducts].forEach(product => product.style ='transform: translateX(0);')
-//         }else {
-//             [...colProducts].forEach(product => product.style ='transform: translateX(-500%);')
-//         }
-//     });
-// });

@@ -1483,6 +1483,13 @@ input.btn_comment_reset:hover{
     font-weight: bold;
 }
 
+.form-checkout-group > label.error {
+    font-size: 13px;
+    color: red;
+    display: contents;
+    font-weight: lighter;
+}
+
 .form-checkout-group > input {
     width: 99%;
     max-width: 100%;
@@ -1578,6 +1585,14 @@ input.btn_comment_reset:hover{
 .btn-order > button:hover {
     box-shadow: inset 0 0 0 100px rgb(0 0 0 / 20%);
     transition: transform .5s, border .5s, background .5s, box-shadow .5s, opacity .5s, color .5s;
+}
+
+.buy-success {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 70px 0px;
 }
 
 /* FOOTER */

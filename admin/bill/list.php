@@ -14,7 +14,7 @@
                             <tr>
                                 <th class="sort">STT</th>
                                 <th class="hide">Mã hoá đơn</th>
-                                <th class="hide">Mã khách hàng</th>
+                                <!-- <th class="hide">Mã khách hàng</th> -->
                                 <th>Tên khách hàng</th>
                                 <th class="hide">Địa chỉ</th>
                                 <th class="hide">Số điện thoại</th>
@@ -38,7 +38,7 @@
                                                 </label>
                                             </td>
                                             <td class="hide"><?= $ma_hd; ?></td>
-                                            <td class="hide"><?= $ma_kh; ?></td>
+                                            <!-- <td class="hide"><?= $ma_kh; ?></td> -->
                                             <td><?= $ten_kh; ?></td>
                                             <td class="hide"><?= $dia_chi; ?></td>
                                             <td class="hide"><?= $sdt; ?></td>
@@ -53,10 +53,10 @@
                                                         <span class="span-title">Mã hoá đơn:</span>
                                                         <span class="span-data"><?= $ma_hd; ?></span>
                                                     </li>
-                                                    <li>
+                                                    <!-- <li>
                                                         <span class="span-title">Mã khách hàng:</span>
                                                         <span class="span-data"><?= $ma_kh; ?></span>
-                                                    </li>
+                                                    </li> -->
                                                     <li>
                                                         <span class="span-title">Địa chỉ:</span>
                                                         <span class="span-data"><?= $dia_chi; ?></span>
@@ -74,7 +74,7 @@
                                         </tr> 
                                 <?php $i++; } } else { ?>
                                         <tr>
-                                            <td colspan="9">Danh sách trống</td>
+                                            <td colspan="8">Danh sách trống</td>
                                         </tr>   
                            <?php }?>
                         </tbody>

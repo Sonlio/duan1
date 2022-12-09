@@ -5,7 +5,7 @@
         <div class="col">
             <div class="panel">
                 <div class="title-panel">
-                    <h2>Cập nhật thông tin khách hàng và nhân viên</h2>
+                    <h2>Cập nhật thông tin khách hàng</h2>
                     <ul class="title-panel-right">
                         <a href="index.php" class="btn-title-panel-right">Thêm mới</a>
                     </ul>

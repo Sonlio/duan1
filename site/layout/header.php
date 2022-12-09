@@ -40,7 +40,7 @@
                     <li><a href="<?= $SITE_URL ?>/main-page?homepage" class="link">Trang chủ</a></li>
                     <li><a href="<?= $SITE_URL ?>/main-page?about" class="link">Giới thiệu</a></li>
                     <li>
-                        <a class="link">Sản phẩm</a>
+                        <a href="<?= $SITE_URL ?>/goods/listed.php?continue_shopping" class="link">Sản phẩm</a>
                         <!-- CHILD MENU -->
                         <ul class="child-menu">
                             <?php

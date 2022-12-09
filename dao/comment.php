@@ -52,7 +52,7 @@
     
     // LẤY BÌNH LUẬN THEO MÃ HÀNG HOÁ
     function binh_luan_select_by_hang_hoa($ma_sp){
-        $sql = "SELECT binh_luan.*, san_pham.ten_sp, khach_hang.ten_kh, khach_hang.hinh FROM binh_luan JOIN san_pham ON san_pham.ma_sp = binh_luan.ma_sp
+        $sql = "SELECT binh_luan.*, san_pham.ten_sp, khach_hang.ten_kh, khach_hang.hinh, khach_hang.ma_kh FROM binh_luan JOIN san_pham ON san_pham.ma_sp = binh_luan.ma_sp
                 JOIN khach_hang on binh_luan.ma_kh = khach_hang.ma_kh WHERE binh_luan.ma_sp=? ORDER BY thoi_gian_bl DESC";
         return query_all($sql, $ma_sp);
     }

@@ -15,7 +15,7 @@
                 $total += $don_gia * $so_luong;
             }
             // Thêm đơn hàng vào bảng hóa đơn
-            $insertBill = "INSERT INTO hoa_don (ma_hd, ma_kh, ten_kh, dia_chi, sdt, email, tong_tien, ngay_mua) VALUES (NULL, '".$_POST['ma_kh']."', '".$_POST['ten_kh']."', '".$_POST['dia_chi']."', '".$_POST['sdt']."', '".$_POST['email']."', '".$total."', current_timestamp())";
+            $insertBill = "INSERT INTO hoa_don (ma_hd, ten_kh, dia_chi, sdt, email, tong_tien, ngay_mua) VALUES (NULL, '".$_POST['ten_kh']."', '".$_POST['dia_chi']."', '".$_POST['sdt']."', '".$_POST['email']."', '".$total."', current_timestamp())";
             $conn = connection();
             $conn->exec($insertBill);
             $orderId = $conn ->lastInsertId();
@@ -51,7 +51,7 @@
                     <?php } ?>
                 </div>
             </div>
-            <form action="cart.php?order=submit" class="form-checkout" method="post">
+            <form id="form-cart" action="cart.php?order=submit" class="form-checkout" method="post">
                 <div class="row no-gutters">
                     <div class="col l-7 m-12 c-12">
                         <div class="wrapper-custommer-detail">
@@ -59,7 +59,7 @@
                                 <h3>Thông tin thanh toán</h3>
                                 <?php if(isset($_SESSION['user'])) { ?>                         
                                     <div class="form-checkout-group">
-                                        <input type="text" hidden name="ma_kh" id="ten_kh" value="<?= $_SESSION['user']['ma_kh'] ?>">
+                                        <!-- <input type="text" hidden name="ma_kh" id="ten_kh" value="<?= $_SESSION['user']['ma_kh'] ?>"> -->
                                         <label for="ten_kh">Tên <strong style="color: red;">*</strong></label>
                                         <input type="text" name="ten_kh" id="ten_kh" value="<?= $_SESSION['user']['ten_kh'] ?>">
                                     </div>
@@ -78,7 +78,7 @@
 
                                 <?php } else { ?>
                                     <div class="form-checkout-group">
-                                        <input type="text" hidden name="ma_kh" value="khách chưa đăng nhập">
+                                        <!-- <input type="text" hidden name="ma_kh" value="khách chưa đăng nhập"> -->
                                         <label for="ten_kh">Tên <strong style="color: red;">*</strong></label>
                                         <input type="text" name="ten_kh" id="ten_kh">
                                     </div>
@@ -149,9 +149,49 @@
                 </div>
             </form>
             <?php } else { ?>
-                <p>Đặt hàng thành công</p>
+                <p class="buy-success">Đặt hàng thành công</p>
            <?php } ?>
         </div>
      </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form-cart").validate({
+            rules: {
+                "ten_kh": {
+                    required: true
+                },
+                "sdt": {
+                    required: true,
+                    number: true,
+                },
+                "dia_chi": {
+                    required: true,
+                },
+                "email": {
+                    required: true,
+                    email:true
+                }
+            },
+
+            messages: {
+                "ten_kh": {
+                    required: "</br>Họ tên không được để trống!"
+                },
+                "sdt": {
+                    required: "</br>Số điện thoại không được để trống!",
+                    number: "</br>Số điện thoại phải là số!"
+                },
+                "dia_chi": {
+                    required: "</br>Địa chỉ không được để trống!",
+                },
+                "email": {
+                    required: "</br>Email không được để trống!",
+                    email: "</br>Email không đúng định dạng!"
+                }, 
+            }
+        });
+    });
+</script>
