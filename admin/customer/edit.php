@@ -12,7 +12,7 @@
                 </div>
                 <div class="content-panel">
                     <br>
-                    <form action="index.php" method="POST" enctype="multipart/form-data">
+                    <form id="form" action="index.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label class="control-label" for="id_customer">Mã khách hàng <strong>*</strong></label>
                             <input class="form-control readonly" readonly type="text" name="ma_kh" id="id_customer" placeholder=" " value="<?= $ma_kh ?>">
@@ -65,3 +65,71 @@
     </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(function() {
+        $("#form").validate({
+            rules: {
+                "ma_kh": {
+                    required: true
+                },
+                "ten_kh": {
+                    required: true
+                },
+                "mat_khau": {
+                    required: true,
+                    minlength: 6
+                },
+                "mat_khau2": {
+                    required: true,
+                    equalTo: "#pass",
+                },
+                "sdt": {
+                    required: true,
+                    number: true,
+                },
+                "dia_chi": {
+                    required: true,
+                },
+                "email": {
+                    required: true,
+                    email:true
+                },
+                "hinh": {
+                    required: true,
+                },
+            },
+
+            messages: {
+                "ma_kh": {
+                    required: "</br>Mã khách hàng không dược để trống!"
+                },
+                "ten_kh": {
+                    required: "</br>Họ tên không được để trống!"
+                },
+                "mat_khau": {
+                    required: "</br>Mật khẩu không được để trống!",
+                    minlength: "</br>Mật khẩu ít nhất 6 kí tự!"
+                },
+                "mat_khau2": {
+                    required: "</br>Xác nhận mật khẩu không được để trống!",
+                    equalTo: "</br>Mật khẩu không trùng khớp!"
+                },
+                "sdt": {
+                    required: "</br>Số điện thoại không được để trống!",
+                    number: "</br>Số điện thoại phải là số!"
+                },
+                "dia_chi": {
+                    required: "</br>Địa chỉ không được để trống!",
+                },
+                "email": {
+                    required: "</br>Email không được để trống!",
+                    email: "</br>Email không đúng định dạng!"
+                }, 
+                "hinh": {
+                    required: "</br>Hình ảnh không được để trống!",
+                }
+            }
+        });
+    });
+</script>
