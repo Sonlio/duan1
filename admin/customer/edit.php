@@ -33,7 +33,7 @@
                             <label class="control-label" for="pic_customer">Hình ảnh <strong>*</strong></label>
                             <input type="file" class="form-control" name="up_hinh" id="pic_customer"> <br>
                         </div>
-                        <span class="update-pic"><?= $hinh ?></span>
+                        <!-- <span class="update-pic"><?= $hinh ?></span> -->
                         <div class="form-group">
                             <label class="control-label" for="tel_customer">Di động <strong>*</strong></label>
                             <input type="text" class="form-control" name="sdt" id="tel_customer" placeholder=" " value="<?= $sdt ?>"> <br>
@@ -95,7 +95,7 @@
                     required: true,
                     email:true
                 },
-                "hinh": {
+                "up_hinh": {
                     required: true,
                 },
             },
@@ -126,7 +126,7 @@
                     required: "</br>Email không được để trống!",
                     email: "</br>Email không đúng định dạng!"
                 }, 
-                "hinh": {
+                "up_hinh": {
                     required: "</br>Hình ảnh không được để trống!",
                 }
             }

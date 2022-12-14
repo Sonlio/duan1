@@ -19,15 +19,6 @@ window.addEventListener("load", function() {{
         changeSlide(-1);
     });
 
-    [...dotItems].forEach(item => item.addEventListener("click", function(e){
-        [...dotItems].forEach(de => de.classList.remove("dot-selected"));
-        e.target.classList.add("dot-selected");
-        const slideIndex = parseInt(e.target.dataset.index);
-        index = slideIndex;
-        positionX = -1 * index * sliderItemWidth;
-        sliderMain.style = `transform: translateX(${positionX}px)`;
-    }))
-
     function changeSlide(direction) {
         if(direction == 1) {
             if(index >= slidesLength - 1) {
@@ -46,7 +37,5 @@ window.addEventListener("load", function() {{
             sliderMain.style = `transform: translateX(${positionX}px)`;
             index--;
         }
-        [...dotItems].forEach(de => de.classList.remove("dot-selected"));
-        dotItems[index].classList.add("dot-selected");
     }
 }})

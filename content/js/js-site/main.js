@@ -1,4 +1,3 @@
-window.addEventListener("load", function() {
 // TABS
     $('.tab-links li:first-child').addClass('active');
     $('.tab-content').hide();
@@ -33,4 +32,3 @@ window.addEventListener("load", function() {
         $this.attr('value', d).val(d)
         })
     })
-});

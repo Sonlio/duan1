@@ -14,12 +14,12 @@
                     <div class="col l-3 m-3 c-6" id="col-product">
                         <a href="<?= $SITE_URL ?>/goods/detail.php?ma_sp=<?= $product['ma_sp'] ?>" class="product-item">
                             <div class="content-product-item">
-                                <!-- <?php 
+                                <?php 
                                     if($product['giam_gia'] > 0) { ?>
                                         <div class="product-item-discount">
                                             <span>-<?= $product['giam_gia']; ?>%</span>
                                         </div>
-                                <?php } ?> -->
+                                <?php } ?>
                                 <div class="product-item-img">
                                     <img src="<?= $CONTENT_URL ?>/images/img-admin/img-products/<?= $product['hinh']; ?>" alt="">
                                 </div>
@@ -30,10 +30,10 @@
                                     <p><?= $product['ten_sp']; ?></p>
                                 </div>
                                 <div class="product-item-price">
-                                    <!-- <?php
+                                    <?php
                                         if($product['giam_gia'] > 0) { ?>
                                             <del><?=  number_format($product['don_gia'], 0, ',', '.');  ?> đ</del>
-                                    <?php } ?> -->
+                                    <?php } ?>
                                     <p><?= number_format($product['don_gia'] - ($product['don_gia'] * ($product['giam_gia'] / 100)), 0, ',', '.'); ?> đ</p>
                                 </div>
                             </div>
@@ -167,12 +167,12 @@
                     <div class="col l-3 m-3 c-6" id="col-product">
                         <a href="<?= $SITE_URL ?>/goods/detail.php?ma_sp=<?= $product['ma_sp'] ?>" class="product-item">
                             <div class="content-product-item">
-                                <!-- <?php 
+                                <?php 
                                     if($product['giam_gia'] > 0) { ?>
                                         <div class="product-item-discount">
                                             <span>-<?= $product['giam_gia']; ?>%</span>
                                         </div>
-                                <?php } ?> -->
+                                <?php } ?>
                                 <div class="product-item-img">
                                     <img src="<?= $CONTENT_URL ?>/images/img-admin/img-products/<?= $product['hinh']; ?>" alt="">
                                 </div>
@@ -183,10 +183,10 @@
                                     <p><?= $product['ten_sp']; ?></p>
                                 </div>
                                 <div class="product-item-price">
-                                    <!-- <?php
+                                    <?php
                                         if($product['giam_gia'] > 0) { ?>
                                             <del><?=  number_format($product['don_gia'], 0, ',', '.');  ?> đ</del>
-                                    <?php } ?> -->
+                                    <?php } ?>
                                     <p><?= number_format($product['don_gia'] - ($product['don_gia'] * ($product['giam_gia'] / 100)), 0, ',', '.'); ?> đ</p>
                                 </div>
                             </div>

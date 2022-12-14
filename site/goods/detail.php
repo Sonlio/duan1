@@ -12,8 +12,6 @@ $sameProducts = san_pham_select_by_loai($ma_loai);
 $types = loai_select_all();
 san_pham_tang_so_luot_xem($ma_sp);
 
-extract($product);
-
 $VIEW = "goods/detail-ui.php";
 
 require '../layoutSmall.php';

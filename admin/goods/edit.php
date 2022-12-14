@@ -24,17 +24,17 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="price_product">Đơn giá <strong>*</strong></label>
-                            <input type="text" class="form-control" name="don_gia" id="price_product" placeholder=" " value="<?= $don_gia ?> đ"> <br>         
+                            <input type="text" class="form-control" name="don_gia" id="price_product" placeholder=" " value="<?= $don_gia ?>"> <br>         
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="discount_product">Giảm giá <strong>*</strong></label>
-                            <input type="text" class="form-control" name="giam_gia" id="discount_product" placeholder=" " value="<?= $giam_gia ?>%"> <br>
+                            <input type="text" class="form-control" name="giam_gia" id="discount_product" placeholder=" " value="<?= $giam_gia ?>"> <br>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="pic_product">Hình ảnh <strong>*</strong></label>
                             <input type="file" class="form-control" name="up_hinh" id="pic_product"> <br>
                         </div>
-                        <span class="update-pic"><?= $hinh ?></span>
+                        <!-- <span class="update-pic"><?= $hinh ?></span> -->
                         <div class="form-group">
                             <label class="control-label" for="id_brand">Mã hãng <strong>*</strong></label>
                             <select name="ma_hang" id="id_brand">
@@ -99,7 +99,7 @@
                     // digits: true,
                     max: 100
                 },
-                "hinh": {
+                "up_hinh": {
                     required: true,
                 },
             },
@@ -119,7 +119,7 @@
                     // digits: "</br>Giảm giá phải là số dương!"
                     max: "</br>Bạn phải nhập từ 0 - 100 (%)!",
                 },
-                "hinh": {
+                "up_hinh": {
                     required: "</br>Hình ảnh không được để trống!"
                 }
             }
